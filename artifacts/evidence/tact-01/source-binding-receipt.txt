@@ -1,0 +1,2 @@
+SOURCE_BINDING_PASS: retained native and Windows package gameplay bytes match checkout
+Windows ZIP SHA256: 6ba5720d0034c346f1d6ae80c1bf24614330511bf8bb0e0a4e2b71c9a1c7d98c

@@ -4,6 +4,8 @@
 > 目標引擎：Godot 4.7.2 stable + typed GDScript。
 > 本文件不改變 docs/GAME_PLAN.md、docs/DECISIONS.md、PLAN.md 的 Owner 授權、Gameplay Gates 與實作範圍。
 
+2026-10-13 資源整合補充：[統一資源入口](GODOT_RESOURCES.md)、[問題排查表](godot/TROUBLESHOOTING.md)、[研究紀錄模板](godot/RESEARCH_TEMPLATE.md)。優先順序見 [PLAN](../PLAN.md)，排序理由見 [開發優先權](DEVELOPMENT_PRIORITIES.md)。下方早期研究內容保留，最新實作狀態以本補充與 PLAN／PR evidence 為準。
+
 ## 1. 查證結論與信任階層
 
 1. 官方 [Godot 4.7.2 stable](https://godotengine.org/article/maintenance-release-godot-4-7-2/) 發布於 **2026-08-18**。Godot 4.8 開發版文件不得視為 4.7.2 可用功能。
@@ -38,7 +40,7 @@
 
 ## 3. 必須對應的開發 Slice
 
-### DM-02 — 地形破壞（下一個相關 Slice）
+### DM-02 — 地形破壞（已實作候選，真人驗收待進行）
 
 - 最小實作先以 StaticBody2D + CollisionShape2D 做固定 HP 的薄牆、橋板、平台。主地面與邊界不可破壞；不做像素切割、無限動態地形或完整 TileMap 破壞。
 - Combat adapter 負責碰撞事實和 terrain_hit 事件，Domain 負責去重、上限、HP、Destroyed 判定；visual crumble 與破壞事件的生命週期不得相互遞迴扣血。
@@ -92,5 +94,5 @@
 ## 6. 非宣稱與治理邊界
 
 - 此文件只是一份 source-verified 的規劃產物，沒有新增 gameplay、素材、遊戲效能 benchmark，也未完成這些第三方 demo 的 Godot 4.7.2 移植。
-- Repo 現有 GOV-00、DM-00、DM-01 是 stacked Draft PR；不得寫入 main、不合併、不發布。這次資料研究沒有改變任何 slice Gate。
+- Repo 現有 GOV-00、DM-00、DM-01、DOC-01、DM-02 是 stacked Draft PR；不得寫入 main、不合併、不發布。這次資料研究沒有改變任何 slice Gate。
 - 原始治理 audit 仍是 partial（GDScript routing、validators、post-task/runtime、CI enforcement/Owner acceptance 待確認）；本文件與技能不能使治理自動變完整。

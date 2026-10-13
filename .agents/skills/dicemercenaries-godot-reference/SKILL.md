@@ -9,6 +9,8 @@ This is a **research/verification skill**, not an AI Governance adoption certifi
 
 Read [docs/GODOT_TECH_REFERENCE.md](../../../docs/GODOT_TECH_REFERENCE.md) first. The authoritative gameplay contracts remain docs/GAME_PLAN.md, docs/DECISIONS.md and PLAN.md.
 
+Use [the resource hub](../../../docs/GODOT_RESOURCES.md) to select official APIs and learning material for the current slice, [troubleshooting](../../../docs/godot/TROUBLESHOOTING.md) for failure paths, and [the research template](../../../docs/godot/RESEARCH_TEMPLATE.md) to retain adoption evidence. Priorities are canonical in PLAN.md; docs/DEVELOPMENT_PRIORITIES.md explains the ordering. A resource or priority entry does not authorize a new gameplay slice.
+
 ## Procedure
 
 1. Identify the specific authorized DM-XX slice, blocker, owned layer and existing tests. Do not introduce game features based solely on tutorials.

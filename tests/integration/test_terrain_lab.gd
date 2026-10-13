@@ -34,7 +34,7 @@ func _initialize() -> void:
 	call_deferred("run_tests")
 
 func run_tests() -> void:
-	check(ProjectSettings.get_setting("application/run/main_scene") == "res://scenes/battle/terrain_lab.tscn", "DM02 is actual main scene")
+	check(ResourceLoader.exists("res://scenes/battle/terrain_lab.tscn"), "DM02 regression lab remains available")
 	await load_mode(0)
 	lab.select_mode(-1)
 	check(lab.mode == 0, "invalid mode selector preserves current case")

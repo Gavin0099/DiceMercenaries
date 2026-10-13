@@ -1,0 +1,17 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "status": "report_only",
+  "command": "python artifacts/evidence/tact-01/check_source_binding.py",
+  "exit_code": 0,
+  "started_at": "2026-10-13T15:15:22Z",
+  "finished_at": "2026-10-13T15:15:22Z",
+  "runner": "governance_tools.test_evidence_receipt_writer",
+  "linked_commit": "4fca620c01ae7b622fc3bbd634df169260d9d4f3",
+  "output_artifacts": [
+    "artifacts/evidence/tact-01/source-binding-receipt.txt"
+  ],
+  "cannot_claim": [
+    "semantic correctness of the tested behavior",
+    "receipt authenticity: every field is fabricatable by a direct writer"
+  ]
+}
