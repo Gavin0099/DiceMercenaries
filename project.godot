@@ -2,7 +2,7 @@ config_version=5
 
 [application]
 config/name="Dice Mercenaries"
-run/main_scene="res://scenes/battle/physics_lab.tscn"
+run/main_scene="res://scenes/battle/terrain_lab.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [display]

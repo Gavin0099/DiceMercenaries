@@ -1,0 +1,4 @@
+interface:
+  display_name: "骰子傭兵團戰鬥動畫"
+  short_description: "讓出手、命中、破壞與落地清楚呈現並保持物理結果一致"
+  default_prompt: "Use $dicemercenaries-combat-motion to improve readable combat feedback without changing DiceMercenaries physics rules."

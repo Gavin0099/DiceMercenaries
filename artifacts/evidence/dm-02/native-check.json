@@ -1,0 +1,141 @@
+{
+  "slice": "DM-02",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "source_commit": "adbff9e3cdb821be11cfe1f3038e15258df62d1f",
+  "worktree_changes": [
+    "?? artifacts/evidence/dm-01/aiming.png.import",
+    "?? artifacts/evidence/dm-01/impact.png.import",
+    "?? artifacts/evidence/dm-01/ready.png.import",
+    "?? artifacts/evidence/dm-01/settled.png.import",
+    "?? artifacts/evidence/dm-02/"
+  ],
+  "source_files_sha256": {
+    "project.godot": "a2e7a5e37fb189326d8486f986b98b806a03894ce1d439a0366cf8efa9397df3",
+    "tools/check_project.py": "96e2e044b2d9f149a116d77b7e1e6349edfa470c7c83cb3a8ab241a11259ce72",
+    "scripts/combat/breakable_terrain.gd": "f9608b927901409821100fabcb0286f0db4987242ae1dac1f047efccf8c148c0",
+    "scripts/combat/player_body.gd": "e10070790025d545a5c957b2364214571aec3f8ccf3182417ce84607eff1001f",
+    "scripts/combat/projectile_body.gd": "abbb7db7d599deb85fa99ce8a070017f31245ba19702f0acc0a4e08cbb807c0a",
+    "scripts/combat/target_body.gd": "042e33b6ba8d6d53a06d13e6291be81373b30794552d03b5127fc1290484ae38",
+    "scripts/domain/shot_rules.gd": "96b23d06b72ef13a1d93213db9a9b6a78f043d0dd7bf25643c1a7e36d02c9436",
+    "scripts/domain/terrain_rules.gd": "d0c0a33db9ab2bbd8fabe47d5c3fea42a6b0f863ecf453e73749f9f8e03c3889",
+    "scripts/presentation/physics_lab.gd": "2cad5be6927b08fe5ba42abc6e6d9926e5e9edba0236403f7a6edaab5bfca01e",
+    "scripts/presentation/terrain_lab.gd": "421c0b329f00e879a6ed24d4c952a466b2432c58586c9221e43dc6e625ece86e",
+    "scenes/battle/physics_lab.tscn": "6a3a0d1dd5fa6338b8a692e2fb2ec9b18fe4d6766d09f5717ad38f26e54e6b34",
+    "scenes/battle/terrain_lab.tscn": "4ef22d4603b5ab76686690553b6188d20b6aac3211cef1baf62dcb476b90b012",
+    "scenes/ui/bootstrap.tscn": "0b90de4e293c30b419c55d13e9c657075b0e4746ba4d82da992cbe0bb5b03b79",
+    "tests/unit/test_shot_rules.gd": "2bc1bbd3f15cecaa88d91595d2176db34bfd38bfe46e522f06df65e1a58c5ebb",
+    "tests/unit/test_terrain_rules.gd": "014cbc2dc5370a0e74ba7f23cef484a55b33728a3b4dcb4af413eea699b393d7",
+    "tests/integration/test_physics_lab.gd": "aa37af2f44ba6504a940d80d4c534f0808ac33d29fbd0dd3759accfe7cfcc0d9",
+    "tests/integration/test_terrain_lab.gd": "b73b7065c07e32fec61ae59c2c19dd90cfc9aef841be3a77fee98392f443745a"
+  },
+  "checks": [
+    {
+      "command": [
+        "/workspace/scratch/1ae49dba32c3/tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+        "--version"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "4.7.2.stable.official.ed1daf0bf\n"
+    },
+    {
+      "command": [
+        "/workspace/scratch/1ae49dba32c3/tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+        "--path",
+        "/workspace/scratch/1ae49dba32c3/DiceMercenaries",
+        "--headless",
+        "--editor",
+        "--import"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Started Project initialization (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Scanning file structure...\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Loading global class names...\u001b[39m\u001b[0m\n[  33% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Verifying GDExtensions...\u001b[39m\u001b[0m\n[  50% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Creating autoload scripts...\u001b[39m\u001b[0m\n[  66% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Initializing plugins...\u001b[39m\u001b[0m\n[  83% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Starting file scan...\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mfirst_scan_filesystem\u001b[22m\n\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Started Loading editor (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading editor layout...\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading docks...\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mloading_editor_layout\u001b[22m\n\u001b[0m\n"
+    },
+    {
+      "command": [
+        "/workspace/scratch/1ae49dba32c3/tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+        "--path",
+        "/workspace/scratch/1ae49dba32c3/DiceMercenaries",
+        "--headless",
+        "--script",
+        "res://tests/unit/test_shot_rules.gd"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nDM01_RULES_PASS count=16\n"
+    },
+    {
+      "command": [
+        "/workspace/scratch/1ae49dba32c3/tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+        "--path",
+        "/workspace/scratch/1ae49dba32c3/DiceMercenaries",
+        "--headless",
+        "--script",
+        "res://tests/integration/test_physics_lab.gd"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nDM01_PHYSICS_PASS count=24\n"
+    },
+    {
+      "command": [
+        "/workspace/scratch/1ae49dba32c3/tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+        "--path",
+        "/workspace/scratch/1ae49dba32c3/DiceMercenaries",
+        "--headless",
+        "--script",
+        "res://tests/unit/test_terrain_rules.gd"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nDM02_RULES_PASS count=17\n"
+    },
+    {
+      "command": [
+        "/workspace/scratch/1ae49dba32c3/tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+        "--path",
+        "/workspace/scratch/1ae49dba32c3/DiceMercenaries",
+        "--headless",
+        "--script",
+        "res://tests/integration/test_terrain_lab.gd"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nDM02_PHYSICS_PASS count=24\n"
+    },
+    {
+      "command": [
+        "/workspace/scratch/1ae49dba32c3/tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+        "--path",
+        "/workspace/scratch/1ae49dba32c3/DiceMercenaries",
+        "--headless",
+        "--quit-after",
+        "3"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n"
+    }
+  ],
+  "ok": true,
+  "not_claimed": [
+    "gameplay",
+    "Windows when run on Linux",
+    "Owner acceptance"
+  ],
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "command": "python tools/check_project.py --godot /workspace/scratch/1ae49dba32c3/tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+  "started_at": "2026-10-13T11:09:16.391776+00:00",
+  "finished_at": "2026-10-13T11:10:02.128086+00:00",
+  "runner": "local Linux Godot 4.7.2",
+  "linked_commit": "adbff9e3cdb821be11cfe1f3038e15258df62d1f",
+  "exit_code": 0,
+  "output_artifacts": [
+    "artifacts/evidence/dm-02/native-check.json"
+  ],
+  "cannot_claim": [
+    "gameplay",
+    "Windows when run on Linux",
+    "Owner acceptance"
+  ]
+}

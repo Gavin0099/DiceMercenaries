@@ -15,6 +15,8 @@ var status: Label
 var detail: Label
 var hit_position: Vector2 = Vector2.ZERO
 var hit_time: float = 0.0
+var slice_caption: String = "DM-01  /  PHYSICS LAB"
+var footer_caption: String = "Fixed terrain. No D20 or enemy turns in this slice."
 
 func _ready() -> void:
 	_build_terrain(Rect2(24, 600, 1232, 60))
@@ -60,14 +62,14 @@ func _build_hud() -> void:
 	var layer: CanvasLayer = CanvasLayer.new()
 	add_child(layer)
 	layer.add_child(_label("DICE MERCENARIES", Vector2(40, 26), 30, Color("edf0e7")))
-	layer.add_child(_label("DM-01  /  PHYSICS LAB", Vector2(42, 65), 14, Color("a4b2c3")))
+	layer.add_child(_label(slice_caption, Vector2(42, 65), 14, Color("a4b2c3")))
 	status = _label("", Vector2(40, 112), 22, Color("ffd68a"))
 	status.size = Vector2(1160, 44)
 	layer.add_child(status)
 	detail = _label("", Vector2(40, 153), 17, Color("d1d9e3"))
 	layer.add_child(detail)
 	layer.add_child(_label("A / D  MOVE     SPACE  JUMP     HOLD + RELEASE  FIRE     ESC  CANCEL", Vector2(40, 657), 17, Color("d1d9e3")))
-	layer.add_child(_label("Fixed terrain. No D20 or enemy turns in this slice.", Vector2(40, 687), 14, Color("91a0b3")))
+	layer.add_child(_label(footer_caption, Vector2(40, 687), 14, Color("91a0b3")))
 	var reset: Button = Button.new()
 	reset.text = "RESET  [R]"
 	reset.position = Vector2(1070, 34)
@@ -146,7 +148,7 @@ func _physics_process(delta: float) -> void:
 		resolution_time += delta
 		var settled: bool = true
 		for target: TargetBody in targets:
-			if not target.is_on_floor() or target.velocity.length() > 30:
+			if target.hp > 0 and (not target.is_on_floor() or target.velocity.length() > 30):
 				settled = false
 		if not is_instance_valid(projectile) and (settled or resolution_time >= 4.0):
 			phase = Phase.READY
