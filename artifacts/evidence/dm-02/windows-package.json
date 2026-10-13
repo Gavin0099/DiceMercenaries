@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "arguments": [
+        "--editor",
+        "--import"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "log": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n[   0% ] first_scan_filesystem | Started Project initialization (5 steps)\n[   0% ] first_scan_filesystem | Scanning file structure...\n[  16% ] first_scan_filesystem | Loading global class names...\n[  33% ] first_scan_filesystem | Verifying GDExtensions...\n[  50% ] first_scan_filesystem | Creating autoload scripts...\n[  66% ] first_scan_filesystem | Initializing plugins...\n[  83% ] first_scan_filesystem | Starting file scan...\n[ DONE ] first_scan_filesystem\n\n[   0% ] update_scripts_classes | Started Registering global classes... (8 steps)\n[   0% ] update_scripts_classes | BreakableTerrain\n[  11% ] update_scripts_classes | PlayerBody\n[  22% ] update_scripts_classes | ProjectileBody\n[  33% ] update_scripts_classes | TargetBody\n[  44% ] update_scripts_classes | ShotRules\n[  55% ] update_scripts_classes | TerrainRules\n[  66% ] update_scripts_classes | \n[  77% ] update_scripts_classes | \n[ DONE ] update_scripts_classes\n\n[   0% ] loading_editor_layout | Started Loading editor (5 steps)\n[   0% ] loading_editor_layout | Loading editor layout...\n[  16% ] loading_editor_layout | Loading docks...\n[ DONE ] loading_editor_layout\n\n"
+    },
+    {
+      "arguments": [
+        "--quit-after",
+        "8"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "log": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n"
+    }
+  ]
+}

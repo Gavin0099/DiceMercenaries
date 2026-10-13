@@ -1,0 +1,14 @@
+[
+  {
+    "case": "missing-engine",
+    "returncode": 1,
+    "error": "[Errno 2] No such file or directory: '/tmp/tmpgdmlz9hg/no-engine'",
+    "passed": true
+  },
+  {
+    "case": "missing-success-sentinel",
+    "returncode": 1,
+    "error": "Native test success sentinel missing",
+    "passed": true
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "run_id": 38388234266,
+  "url": "https://github.com/Gavin0099/DiceMercenaries/actions/runs/38388234266",
+  "pr_head": "adbff9e3cdb821be11cfe1f3038e15258df62d1f",
+  "tested_pr_merge": "610ec956d4bd7c3f14ea0d4104463b0f6eabc0c9",
+  "jobs": {
+    "windows": "success",
+    "linux": "success"
+  },
+  "note": "Actions checkout tests PR merge ref. Downloaded native receipts compared against local committed gameplay/test source hashes. Windows fresh extracted startup passes; Linux scripted native replay passes. No human gameplay acceptance.",
+  "source_hash_comparison": "Windows path separators normalized; both native receipts match all local committed source SHA-256 values.",
+  "package_manifest": {
+    "project.godot": "a2e7a5e37fb189326d8486f986b98b806a03894ce1d439a0366cf8efa9397df3",
+    "scripts\\combat\\breakable_terrain.gd": "f9608b927901409821100fabcb0286f0db4987242ae1dac1f047efccf8c148c0",
+    "scripts\\combat\\player_body.gd": "e10070790025d545a5c957b2364214571aec3f8ccf3182417ce84607eff1001f",
+    "scripts\\combat\\projectile_body.gd": "abbb7db7d599deb85fa99ce8a070017f31245ba19702f0acc0a4e08cbb807c0a",
+    "scripts\\combat\\target_body.gd": "042e33b6ba8d6d53a06d13e6291be81373b30794552d03b5127fc1290484ae38",
+    "scripts\\domain\\shot_rules.gd": "96b23d06b72ef13a1d93213db9a9b6a78f043d0dd7bf25643c1a7e36d02c9436",
+    "scripts\\domain\\terrain_rules.gd": "d0c0a33db9ab2bbd8fabe47d5c3fea42a6b0f863ecf453e73749f9f8e03c3889",
+    "scripts\\presentation\\physics_lab.gd": "2cad5be6927b08fe5ba42abc6e6d9926e5e9edba0236403f7a6edaab5bfca01e",
+    "scripts\\presentation\\terrain_lab.gd": "421c0b329f00e879a6ed24d4c952a466b2432c58586c9221e43dc6e625ece86e",
+    "scenes\\battle\\physics_lab.tscn": "6a3a0d1dd5fa6338b8a692e2fb2ec9b18fe4d6766d09f5717ad38f26e54e6b34",
+    "scenes\\battle\\terrain_lab.tscn": "4ef22d4603b5ab76686690553b6188d20b6aac3211cef1baf62dcb476b90b012",
+    "scenes\\ui\\bootstrap.tscn": "0b90de4e293c30b419c55d13e9c657075b0e4746ba4d82da992cbe0bb5b03b79"
+  },
+  "package_sha256": "3ec069976106e0c1b34c47c099979a37a9da228cd419217d36f58ab15c5c77b7"
+}

@@ -1,0 +1,42 @@
+{
+  "slice": "DM-02",
+  "validated_source_commit": "adbff9e3cdb821be11cfe1f3038e15258df62d1f",
+  "capture_origin": "scripted native Godot player shots, Linux OpenGL Mesa llvmpipe, 1280x720, 60fps, Dummy audio",
+  "captured_before_source_commit": true,
+  "provenance": "Capture used uncommitted implementation; gameplay/test source hashes match the committed native-check snapshot. This is not a human playtest.",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "cases": [
+    {
+      "case": 1,
+      "broken": true,
+      "target_hp": 6
+    },
+    {
+      "case": 2,
+      "broken": true,
+      "target_hp": 4
+    },
+    {
+      "case": 3,
+      "broken": true,
+      "target_hp": 0
+    }
+  ],
+  "screenshots": {
+    "case1-after.png": "ceae5deb62c798b031d8aa416ceabd4d416c87dca15bcb22adb7daedb901b489",
+    "case1-before.png": "02290afe7f6d5213dd0950bcff10daffa89dc897f873f634cdd42ce52702f5d5",
+    "case2-after.png": "ec5ae71ee0bc245dd1f5825609bc19f7b8b889fee35a701cfcf3de6efb3f9ebc",
+    "case2-before.png": "975477eaa766fe34ee86cace0c77d2e1c3f2def89722a939ab6bd8968c8d15e4",
+    "case3-after.png": "f1b5caa2e69f1581e2cc9117427df959db53df04c9ef288d6ac0dbbecc89bb0c",
+    "case3-before.png": "bf78270afe03e00c0f94910791639af91d7643273d87451926517de51f9bdca1"
+  },
+  "video_sha256": "c97bb9f3e5b8382f120fd77521583ba371fe0780f35bf78db57ad84b8e083ad1",
+  "script_sha256": "9dd107768153cb0edb3d2a195ffee576af612c63ee01757b4d9f694af614050e",
+  "cannot_claim": [
+    "human input/readability acceptance",
+    "finished character art/rig",
+    "audio QA",
+    "G1 gate",
+    "full governance"
+  ]
+}
