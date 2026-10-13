@@ -1,0 +1,29 @@
+
+[governance] memory workflow advisory: memory/** changes detected
+  run: python -m governance_tools.memory_workflow --check --repo . --run-guard
+  completion_claim_allowed=True
+  note: pre-commit advisory only; commit is not blocked by this check
+
+[feat/dm-00 3feade2] feat(dm-00): add independent Godot skeleton and pinned native CI
+ 23 files changed, 243 insertions(+), 1 deletion(-)
+ create mode 100644 .github/workflows/dm-00.yml
+ create mode 100644 assets/prototypes/.gitkeep
+ create mode 100644 data/.gitkeep
+ create mode 100644 docs/BALANCE.md
+ create mode 100644 docs/DECISIONS.md
+ create mode 100644 docs/PLAYTEST.md
+ create mode 100644 docs/RULES_D20.md
+ create mode 100644 docs/slices/DM-00.md
+ create mode 100644 project.godot
+ create mode 100644 scenes/ui/bootstrap.tscn
+ create mode 100644 scripts/combat/.gitkeep
+ create mode 100644 scripts/domain/.gitkeep
+ create mode 100644 scripts/exploration/.gitkeep
+ create mode 100644 scripts/infrastructure/.gitkeep
+ create mode 100644 scripts/presentation/.gitkeep
+ create mode 100644 scripts/progression/.gitkeep
+ create mode 100644 tests/integration/test_bootstrap.gd
+ create mode 100644 tests/integration/test_bootstrap.gd.uid
+ create mode 100644 tests/manual/DM-00.md
+ create mode 100644 tests/unit/.gitkeep
+ create mode 100644 tools/check_project.py

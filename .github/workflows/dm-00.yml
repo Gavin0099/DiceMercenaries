@@ -1,0 +1,53 @@
+name: DM-00 native checks
+on:
+  push:
+    branches: ['feat/dm-00']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download pinned official engine and verify checksum
+        shell: python
+        run: |
+          import hashlib, os, pathlib, platform, urllib.request, zipfile
+          windows = platform.system() == 'Windows'
+          asset = 'Godot_v4.7.2-stable_win64.exe.zip' if windows else 'Godot_v4.7.2-stable_linux.x86_64.zip'
+          expected = '83decd58fdf67b9d657958a1ae6bf1929c20785315a81effe245874cdc57acb709bf868e00778a96984338c1b29dafdb453c6847747694621c6ecf5da2259993' if windows else '9aa00f7a605200940bce3027a567b782f49bd8e940dd06ae9e987bd65aee1b1467edd56ed84fcdcbdd44354bf613bdbb4e5d2913e925850368e150c59ed54c65'
+          payload = urllib.request.urlopen('https://github.com/godotengine/godot/releases/download/4.7.2-stable/' + asset, timeout=120).read()
+          assert hashlib.sha512(payload).hexdigest() == expected, 'Official archive checksum mismatch'
+          archive = pathlib.Path(os.environ['RUNNER_TEMP']) / asset
+          archive.write_bytes(payload)
+          destination = pathlib.Path(os.environ['RUNNER_TEMP']) / 'godot'
+          with zipfile.ZipFile(archive) as z:
+              z.extractall(destination)
+          name = 'Godot_v4.7.2-stable_win64_console.exe' if windows else 'Godot_v4.7.2-stable_linux.x86_64'
+          binary = destination / name
+          if not windows:
+              binary.chmod(0o755)
+          with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as env:
+              env.write('DM_GODOT=' + str(binary) + '\n')
+      - name: Native import, scene contract and startup
+        shell: python
+        run: |
+          import os, subprocess
+          subprocess.run(['python', 'tools/check_project.py', '--godot', os.environ['DM_GODOT']], check=True)
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dm00-${{ matrix.os }}-${{ github.sha }}
+          path: artifacts/evidence/dm-00/*.json

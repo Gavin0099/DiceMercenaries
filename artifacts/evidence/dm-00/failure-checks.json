@@ -1,0 +1,17 @@
+{
+  "linux_archive_sha512": "9aa00f7a605200940bce3027a567b782f49bd8e940dd06ae9e987bd65aee1b1467edd56ed84fcdcbdd44354bf613bdbb4e5d2913e925850368e150c59ed54c65",
+  "checks": [
+    {
+      "case": "wrong scene slice metadata",
+      "exit": 1,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nDM00_BOOTSTRAP_FAIL: Scene must identify its slice\n",
+      "rejected": true
+    },
+    {
+      "case": "missing engine fails closed",
+      "exit": 1,
+      "rejected": true
+    }
+  ],
+  "ok": true
+}
