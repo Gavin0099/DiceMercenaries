@@ -1,0 +1,4 @@
+interface:
+  display_name: "骰子傭兵團角色美術"
+  short_description: "產生側視奇幻角色候選並核對身分、透明背景與實際遊戲尺寸"
+  default_prompt: "Use $dicemercenaries-character-art to prepare consistent side-view fantasy character candidates for DiceMercenaries."

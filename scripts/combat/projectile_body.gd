@@ -28,6 +28,9 @@ func _physics_process(delta: float) -> void:
 		if collider is TargetBody:
 			(collider as TargetBody).receive_hit(shot_id, velocity)
 			_finish("target")
+		elif collider is BreakableTerrain:
+			(collider as BreakableTerrain).receive_hit(shot_id)
+			_finish("breakable")
 		else:
 			_finish("terrain")
 		return

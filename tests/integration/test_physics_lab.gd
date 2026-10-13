@@ -17,8 +17,9 @@ func _initialize() -> void:
 	call_deferred("run_tests")
 
 func run_tests() -> void:
-	var path: String = ProjectSettings.get_setting("application/run/main_scene", "")
-	check(path == "res://scenes/battle/physics_lab.tscn", "shipped main scene is lab")
+	# Retained DM-01 fixture; the DM-02 test verifies the current shipped entry.
+	var path: String = "res://scenes/battle/physics_lab.tscn"
+	check(ResourceLoader.exists(path), "retained DM01 fixture exists")
 	var packed: PackedScene = load(path) as PackedScene
 	if packed == null:
 		printerr("DM01_PHYSICS_FAIL: cannot load lab")

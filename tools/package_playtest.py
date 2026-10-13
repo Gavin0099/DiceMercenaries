@@ -24,7 +24,7 @@ def main() -> None:
                     archive.write(path, 'DiceMercenaries/game/' + str(path.relative_to(ROOT)))
         archive.write(ROOT / 'project.godot', 'DiceMercenaries/game/project.godot')
         archive.writestr('DiceMercenaries/Play.cmd', '@echo off\r\ncd /d "%~dp0"\r\nstart /wait "Import" Godot.exe --headless --editor --path "%~dp0game" --import\r\nif errorlevel 1 (\r\n  pause\r\n  exit /b 1\r\n)\r\nstart "Dice Mercenaries" Godot.exe --path "%~dp0game"\r\n')
-        archive.writestr('DiceMercenaries/README.txt', 'DM-01 development playtest (Godot editor engine in game mode, not an exported release).\nDouble-click Play.cmd. First launch imports source scripts locally.\nA/D: move; Space: jump; hold left mouse and release: fire; Esc: cancel; R: reset.\nFixed terrain; no D20, terrain destruction, enemy turns or saves.\nPlease report: can you aim without instruction? Can you intentionally hit and push a target into a wall?\n')
+        archive.writestr('DiceMercenaries/README.txt', 'DM-02 development playtest (Godot editor engine in game mode, not an exported release).\nDouble-click Play.cmd. First launch imports source scripts locally.\nA/D: move; Space: jump; hold left mouse and release: fire; Esc: cancel; R: reset.\nKeys 1/2/3: wall, shallow platform, deep pit. M: reduce decorative effects.\nNo D20, enemy turns or saves.\nPlease report: can you aim without instruction? Can you intentionally hit and push a target into a wall?\n')
         manifest = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
                     for p in [ROOT / 'project.godot', *sorted((ROOT / 'scripts').rglob('*.gd')),
                               *sorted((ROOT / 'scenes').rglob('*.tscn'))]}

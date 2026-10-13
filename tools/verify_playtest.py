@@ -29,7 +29,7 @@ def main() -> None:
     output.write_text(json.dumps({'ok': all(c['ok'] for c in checks), 'checks': checks}, indent=2), encoding='utf-8')
     if not all(c['ok'] for c in checks):
         raise SystemExit('Extracted package native check failed')
-    print('DM01_PACKAGE_PASS')
+    print('PLAYTEST_PACKAGE_PASS')
 
 
 if __name__ == '__main__':
