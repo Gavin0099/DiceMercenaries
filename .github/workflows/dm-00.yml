@@ -60,14 +60,13 @@ jobs:
         shell: bash
         run: |
           xvfb-run -a "$DM_GODOT" --path . --audio-driver Dummy --rendering-method gl_compatibility --script res://tests/manual/replay_lab.gd --write-movie "$RUNNER_TEMP/dm01.avi" --fixed-fps 60
-          ffmpeg -y -i "$RUNNER_TEMP/dm01.avi" -c:v libx264 -pix_fmt yuv420p "$RUNNER_TEMP/dm01.mp4"
       - uses: actions/upload-artifact@v4
         if: runner.os == 'Linux' && success()
         with:
           name: dm01-native-capture-${{ github.sha }}
           path: |
             artifacts/evidence/dm-01/*.png
-            ${{ runner.temp }}/dm01.mp4
+            ${{ runner.temp }}/dm01.avi
       - name: Package Windows development playtest
         if: runner.os == 'Windows'
         shell: python
