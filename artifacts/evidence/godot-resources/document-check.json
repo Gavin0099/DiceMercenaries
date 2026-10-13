@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "files": [
+    "README.md",
+    "PLAN.md",
+    "docs/GODOT_RESOURCES.md",
+    "docs/GODOT_TECH_REFERENCE.md",
+    "docs/DEVELOPMENT_PRIORITIES.md",
+    "docs/godot/TROUBLESHOOTING.md",
+    "docs/godot/RESEARCH_TEMPLATE.md",
+    ".agents/skills/dicemercenaries-godot-reference/SKILL.md"
+  ],
+  "local_links_checked": 29,
+  "missing": [],
+  "gameplay_tests": "NOT RUN: documentation-only changes",
+  "source_check_limits": [
+    "Bahamut original page returned 403; user-supplied content used",
+    "GDQuest school direct open failed; entry confirmed from official references",
+    "No third-party demo compatibility or human gameplay acceptance claimed"
+  ]
+}
