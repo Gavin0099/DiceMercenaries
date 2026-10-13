@@ -1,0 +1,29 @@
+{
+  "slice": "DM-01",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "source_commit": "07c65c629d7e65043068c93eb81d6b164710c284",
+  "worktree_changes": [
+    "?? artifacts/evidence/dm-01/"
+  ],
+  "source_files_sha256": {
+    "project.godot": "dfa6c3c177746b777a24b830523164c1a950e594aa1b63896c952d8649e4a0d4",
+    "tools/check_project.py": "f7e91b31318592230262101d7410cbf3c5440143587649d43f737a51d0773b65",
+    "scripts/combat/player_body.gd": "e10070790025d545a5c957b2364214571aec3f8ccf3182417ce84607eff1001f",
+    "scripts/combat/projectile_body.gd": "1bfd4bb0e7d75f3f097d5aad7c46e54b890fdf89d5738e25d400b2ef0b178e7b",
+    "scripts/combat/target_body.gd": "1548274e9f72ecb3c7940924973a794d1e78956400173de91f5694a42d2f0648",
+    "scripts/domain/shot_rules.gd": "96b23d06b72ef13a1d93213db9a9b6a78f043d0dd7bf25643c1a7e36d02c9436",
+    "scripts/presentation/physics_lab.gd": "a23f039d318f18a688cdbb7df81d5ccff985253ecf2b9ac8056cfdd85b8e14b4",
+    "scenes/battle/physics_lab.tscn": "6a3a0d1dd5fa6338b8a692e2fb2ec9b18fe4d6766d09f5717ad38f26e54e6b34",
+    "scenes/ui/bootstrap.tscn": "0b90de4e293c30b419c55d13e9c657075b0e4746ba4d82da992cbe0bb5b03b79",
+    "tests/unit/test_shot_rules.gd": "2bc1bbd3f15cecaa88d91595d2176db34bfd38bfe46e522f06df65e1a58c5ebb",
+    "tests/integration/test_physics_lab.gd": "2a82b8011fc21d5b7e7190214a5a6f6b0fd74dcafe99a24cf4274805b64460fe"
+  },
+  "checks": [],
+  "ok": false,
+  "not_claimed": [
+    "gameplay",
+    "Windows when run on Linux",
+    "Owner acceptance"
+  ],
+  "error": "[Errno 2] No such file or directory: '/missing/godot'"
+}

@@ -1,0 +1,63 @@
+{
+  "slice": "DM-01",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "source_commit": "94cb0a675248c97479dc1a966a9728eea1e9cdb9",
+  "worktree_changes": [],
+  "source_files_sha256": {
+    "project.godot": "dfa6c3c177746b777a24b830523164c1a950e594aa1b63896c952d8649e4a0d4",
+    "tools/check_project.py": "f7e91b31318592230262101d7410cbf3c5440143587649d43f737a51d0773b65",
+    "scripts/combat/player_body.gd": "e10070790025d545a5c957b2364214571aec3f8ccf3182417ce84607eff1001f",
+    "scripts/combat/projectile_body.gd": "1bfd4bb0e7d75f3f097d5aad7c46e54b890fdf89d5738e25d400b2ef0b178e7b",
+    "scripts/combat/target_body.gd": "1548274e9f72ecb3c7940924973a794d1e78956400173de91f5694a42d2f0648",
+    "scripts/domain/shot_rules.gd": "96b23d06b72ef13a1d93213db9a9b6a78f043d0dd7bf25643c1a7e36d02c9436",
+    "scripts/presentation/physics_lab.gd": "a23f039d318f18a688cdbb7df81d5ccff985253ecf2b9ac8056cfdd85b8e14b4",
+    "scenes/battle/physics_lab.tscn": "6a3a0d1dd5fa6338b8a692e2fb2ec9b18fe4d6766d09f5717ad38f26e54e6b34",
+    "scenes/ui/bootstrap.tscn": "0b90de4e293c30b419c55d13e9c657075b0e4746ba4d82da992cbe0bb5b03b79",
+    "tests/unit/test_shot_rules.gd": "66aa8b39537b17485de3efab6c8b05771e8ad30d7bfe82b6c04f9b0f05a20d4f",
+    "tests/integration/test_physics_lab.gd": "33492479e1eaaf3eac7114ca21d24db2729c0b21877fb6ba5df5988eb0364349"
+  },
+  "checks": [
+    {
+      "command": [
+        "/workspace/scratch/1ae49dba32c3/tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+        "--version"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "4.7.2.stable.official.ed1daf0bf\n"
+    },
+    {
+      "command": [
+        "/workspace/scratch/1ae49dba32c3/tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+        "--path",
+        "/tmp/dm01-negative-buu0t87k",
+        "--headless",
+        "--editor",
+        "--import"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Started Project initialization (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Scanning file structure...\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Loading global class names...\u001b[39m\u001b[0m\n[  33% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Verifying GDExtensions...\u001b[39m\u001b[0m\n[  50% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Creating autoload scripts...\u001b[39m\u001b[0m\n[  66% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Initializing plugins...\u001b[39m\u001b[0m\n[  83% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Starting file scan...\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mfirst_scan_filesystem\u001b[22m\n\u001b[0m\n[   0% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | Started Registering global classes... (9 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | PlayerBody\u001b[39m\u001b[0m\n[  10% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | ProjectileBody\u001b[39m\u001b[0m\n[  20% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | TargetBody\u001b[39m\u001b[0m\n[  30% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | ShotRules\u001b[39m\u001b[0m\n[  40% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | \u001b[39m\u001b[0m\n[  50% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | \u001b[39m\u001b[0m\n[  60% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | \u001b[39m\u001b[0m\n[  70% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | \u001b[39m\u001b[0m\n[  80% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | \u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mupdate_scripts_classes\u001b[22m\n\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Started Loading editor (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading editor layout...\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading docks...\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mloading_editor_layout\u001b[22m\n\u001b[0m\n"
+    },
+    {
+      "command": [
+        "/workspace/scratch/1ae49dba32c3/tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+        "--path",
+        "/tmp/dm01-negative-buu0t87k",
+        "--headless",
+        "--script",
+        "res://tests/unit/test_shot_rules.gd"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nINVALID_SENTINEL count=16\n"
+    }
+  ],
+  "ok": false,
+  "not_claimed": [
+    "gameplay",
+    "Windows when run on Linux",
+    "Owner acceptance"
+  ],
+  "error": "Native test success sentinel missing"
+}
