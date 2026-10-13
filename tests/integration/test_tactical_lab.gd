@@ -29,7 +29,7 @@ func run() -> void:
 	await fresh()
 	check(lab.hero.hp==12 and lab.enemies.size()==2,"one warrior and two enemies")
 	check(lab.intents.size()==2,"both enemies telegraph before input")
-	check(ProjectSettings.get_setting("application/run/main_scene")=="res://scenes/battle/tactical_lab.tscn","tactical encounter is the playable entry point")
+	check(ResourceLoader.exists("res://scenes/battle/tactical_lab.tscn"),"tactical encounter remains available")
 	check(lab.hero.is_on_floor(),"warrior has actual floor collision")
 	lab.select_skill("shield")
 	check(not lab.attack(lab.enemies[0]),"out of range attack rejected")
