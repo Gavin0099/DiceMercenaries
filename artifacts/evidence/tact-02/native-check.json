@@ -1,0 +1,199 @@
+{
+  "slice": "TACT-02",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "source_commit": "e873720a5308eb68649687d8f4a773b614bff6cd",
+  "worktree_changes": [
+    " M project.godot",
+    " M scripts/combat/tactical_enemy.gd",
+    " M tests/integration/test_tactical_lab.gd",
+    " M tools/check_project.py",
+    " M tools/package_playtest.py",
+    "?? artifacts/evidence/dm-01/aiming.png.import",
+    "?? artifacts/evidence/dm-01/impact.png.import",
+    "?? artifacts/evidence/dm-01/ready.png.import",
+    "?? artifacts/evidence/dm-01/settled.png.import",
+    "?? artifacts/evidence/dm-02/case1-after.png.import",
+    "?? artifacts/evidence/dm-02/case1-before.png.import",
+    "?? artifacts/evidence/dm-02/case2-after.png.import",
+    "?? artifacts/evidence/dm-02/case2-before.png.import",
+    "?? artifacts/evidence/dm-02/case3-after.png.import",
+    "?? artifacts/evidence/dm-02/case3-before.png.import",
+    "?? artifacts/evidence/tact-01/bridge-after.png.import",
+    "?? artifacts/evidence/tact-01/bridge-before.png.import",
+    "?? artifacts/evidence/tact-01/bridge-reduced.png.import",
+    "?? artifacts/evidence/tact-01/ready.png.import",
+    "?? artifacts/evidence/tact-01/response.png.import",
+    "?? artifacts/evidence/tact-01/shield-impact.png.import",
+    "?? artifacts/evidence/tact-01/shield-preview.png.import",
+    "?? docs/slices/TACT-02.md",
+    "?? scenes/battle/counterplay_lab.tscn",
+    "?? scripts/presentation/counterplay_lab.gd",
+    "?? scripts/presentation/counterplay_lab.gd.uid",
+    "?? tests/integration/test_counterplay_lab.gd",
+    "?? tests/integration/test_counterplay_lab.gd.uid",
+    "?? tests/manual/replay_counterplay.gd"
+  ],
+  "source_files_sha256": {
+    "project.godot": "89bf0a860837f900a29921b408994405f33fc07952fee3dced2968c0f44b3b60",
+    "tools\\check_project.py": "49f8eeceff2ed57ed6ae5168c73aefb3726e410b411b8a493711bf1a1805cc7d",
+    "scripts\\combat\\breakable_terrain.gd": "f9608b927901409821100fabcb0286f0db4987242ae1dac1f047efccf8c148c0",
+    "scripts\\combat\\player_body.gd": "e10070790025d545a5c957b2364214571aec3f8ccf3182417ce84607eff1001f",
+    "scripts\\combat\\projectile_body.gd": "abbb7db7d599deb85fa99ce8a070017f31245ba19702f0acc0a4e08cbb807c0a",
+    "scripts\\combat\\tactical_enemy.gd": "83d1f74f1a6c53325443c76803b491753ed4cc0e27531971d092396be8e196d6",
+    "scripts\\combat\\target_body.gd": "042e33b6ba8d6d53a06d13e6291be81373b30794552d03b5127fc1290484ae38",
+    "scripts\\combat\\warrior_body.gd": "450a82a6ed72b18fd916a590af34b26538aac53c50bcbf12053bf08562df2fea",
+    "scripts\\domain\\shot_rules.gd": "96b23d06b72ef13a1d93213db9a9b6a78f043d0dd7bf25643c1a7e36d02c9436",
+    "scripts\\domain\\tactical_rules.gd": "5710c90f798f4459b992772651a2e26aa81ec857820ef7b5d01a1eb97a83246a",
+    "scripts\\domain\\terrain_rules.gd": "d0c0a33db9ab2bbd8fabe47d5c3fea42a6b0f863ecf453e73749f9f8e03c3889",
+    "scripts\\presentation\\counterplay_lab.gd": "e7d1151901cea2400f2d8122d42e0c84472b8e5f6e41846a42776be3e03b6a9b",
+    "scripts\\presentation\\physics_lab.gd": "2cad5be6927b08fe5ba42abc6e6d9926e5e9edba0236403f7a6edaab5bfca01e",
+    "scripts\\presentation\\tactical_lab.gd": "b329cd50fff0e5e5ef718bdc97c2cb3e3f524641937b308a4efd3a465c475a40",
+    "scripts\\presentation\\terrain_lab.gd": "421c0b329f00e879a6ed24d4c952a466b2432c58586c9221e43dc6e625ece86e",
+    "scenes\\battle\\counterplay_lab.tscn": "22cd0d5d68c8b5bbf1de9134c4ef1d02b8747d1a08746aec7594b3a4d16e37af",
+    "scenes\\battle\\physics_lab.tscn": "6a3a0d1dd5fa6338b8a692e2fb2ec9b18fe4d6766d09f5717ad38f26e54e6b34",
+    "scenes\\battle\\tactical_lab.tscn": "a0fbfefe773bf8b616519d629c04148b64a8e96a7d4fa526699dd060937b2308",
+    "scenes\\battle\\terrain_lab.tscn": "4ef22d4603b5ab76686690553b6188d20b6aac3211cef1baf62dcb476b90b012",
+    "scenes\\ui\\bootstrap.tscn": "0b90de4e293c30b419c55d13e9c657075b0e4746ba4d82da992cbe0bb5b03b79",
+    "tests\\unit\\test_shot_rules.gd": "2bc1bbd3f15cecaa88d91595d2176db34bfd38bfe46e522f06df65e1a58c5ebb",
+    "tests\\unit\\test_tactical_rules.gd": "859e7fa67c0f03a7572cd6d4cc495b3279c40c82b6185205492a074c75720d35",
+    "tests\\unit\\test_terrain_rules.gd": "014cbc2dc5370a0e74ba7f23cef484a55b33728a3b4dcb4af413eea699b393d7",
+    "tests\\integration\\test_physics_lab.gd": "aa37af2f44ba6504a940d80d4c534f0808ac33d29fbd0dd3759accfe7cfcc0d9",
+    "tests\\integration\\test_terrain_lab.gd": "b0d09abbdbaadc6ce6c5569b0235748e0388225522c3cffd47d9356bc49dafda",
+    "tests\\integration\\test_tactical_lab.gd": "ae02db7a70cfcd398e817bd434e3f7e4cd35dee42fc06e84e76c438e63f72e83",
+    "tests\\integration\\test_counterplay_lab.gd": "0db0b528246dc19789350cc8a1af9937e4c862ef60d507a8a37b88fc133e1893"
+  },
+  "checks": [
+    {
+      "command": [
+        "build/DM02-playtest/DiceMercenaries/Godot.exe",
+        "--version"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "4.7.2.stable.official.ed1daf0bf\n"
+    },
+    {
+      "command": [
+        "build/DM02-playtest/DiceMercenaries/Godot.exe",
+        "--path",
+        "D:\\DiceMercenaries",
+        "--headless",
+        "--editor",
+        "--import"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Started 專案初始化中 (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | 正在掃描檔案結構…\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | 正在載入全域類別名稱…\u001b[39m\u001b[0m\n[  33% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | 正在驗證 GDExtension…\u001b[39m\u001b[0m\n[  50% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | 正在建立自動載入腳本…\u001b[39m\u001b[0m\n[  66% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | 初始化外掛程式...\u001b[39m\u001b[0m\n[  83% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | 開始掃描檔案...\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mfirst_scan_filesystem\u001b[22m\n\u001b[0m\n[   0% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | Started 註冊全域類別中... (2 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | \u001b[39m\u001b[0m\n[  33% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | \u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mupdate_scripts_classes\u001b[22m\n\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Started 正在載入編輯器 (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | 正在載入編輯器佈局…\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | 正在載入面板…\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mloading_editor_layout\u001b[22m\n\u001b[0m\nWARNING: Detected another project.godot at res://build/DM02-playtest/DiceMercenaries/game. The folder will be ignored.\n   at: _should_skip_directory (editor/file_system/editor_file_system.cpp:3497)\n"
+    },
+    {
+      "command": [
+        "build/DM02-playtest/DiceMercenaries/Godot.exe",
+        "--path",
+        "D:\\DiceMercenaries",
+        "--headless",
+        "--script",
+        "res://tests/unit/test_shot_rules.gd"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nDM01_RULES_PASS count=16\n"
+    },
+    {
+      "command": [
+        "build/DM02-playtest/DiceMercenaries/Godot.exe",
+        "--path",
+        "D:\\DiceMercenaries",
+        "--headless",
+        "--script",
+        "res://tests/integration/test_physics_lab.gd"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nDM01_PHYSICS_PASS count=24\n"
+    },
+    {
+      "command": [
+        "build/DM02-playtest/DiceMercenaries/Godot.exe",
+        "--path",
+        "D:\\DiceMercenaries",
+        "--headless",
+        "--script",
+        "res://tests/unit/test_terrain_rules.gd"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nDM02_RULES_PASS count=17\n"
+    },
+    {
+      "command": [
+        "build/DM02-playtest/DiceMercenaries/Godot.exe",
+        "--path",
+        "D:\\DiceMercenaries",
+        "--headless",
+        "--script",
+        "res://tests/integration/test_terrain_lab.gd"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nDM02_PHYSICS_PASS count=24\n"
+    },
+    {
+      "command": [
+        "build/DM02-playtest/DiceMercenaries/Godot.exe",
+        "--path",
+        "D:\\DiceMercenaries",
+        "--headless",
+        "--script",
+        "res://tests/unit/test_tactical_rules.gd"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nTACT01_RULES_PASS count=30\n"
+    },
+    {
+      "command": [
+        "build/DM02-playtest/DiceMercenaries/Godot.exe",
+        "--path",
+        "D:\\DiceMercenaries",
+        "--headless",
+        "--script",
+        "res://tests/integration/test_tactical_lab.gd"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nTACT01_SCENE_PASS count=28\n"
+    },
+    {
+      "command": [
+        "build/DM02-playtest/DiceMercenaries/Godot.exe",
+        "--path",
+        "D:\\DiceMercenaries",
+        "--headless",
+        "--script",
+        "res://tests/integration/test_counterplay_lab.gd"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nTACT02_SCENE_PASS count=24\n"
+    },
+    {
+      "command": [
+        "build/DM02-playtest/DiceMercenaries/Godot.exe",
+        "--path",
+        "D:\\DiceMercenaries",
+        "--headless",
+        "--quit-after",
+        "3"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n"
+    }
+  ],
+  "ok": true,
+  "not_claimed": [
+    "gameplay",
+    "Windows when run on Linux",
+    "Owner acceptance"
+  ]
+}

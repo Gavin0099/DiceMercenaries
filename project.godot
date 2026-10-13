@@ -1,8 +1,8 @@
 config_version=5
 
 [application]
-config/name="Dice Mercenaries"
-run/main_scene="res://scenes/battle/tactical_lab.tscn"
+config/name="骰子傭兵團"
+run/main_scene="res://scenes/battle/counterplay_lab.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [display]

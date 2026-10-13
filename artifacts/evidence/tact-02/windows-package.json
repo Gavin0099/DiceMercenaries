@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "arguments": [
+        "--editor",
+        "--import"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "log": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n[   0% ] first_scan_filesystem | Started \u5c08\u6848\u521d\u59cb\u5316\u4e2d (5 steps)\n[   0% ] first_scan_filesystem | \u6b63\u5728\u6383\u63cf\u6a94\u6848\u7d50\u69cb\u2026\n[  16% ] first_scan_filesystem | \u6b63\u5728\u8f09\u5165\u5168\u57df\u985e\u5225\u540d\u7a31\u2026\n[  33% ] first_scan_filesystem | \u6b63\u5728\u9a57\u8b49 GDExtension\u2026\n[  50% ] first_scan_filesystem | \u6b63\u5728\u5efa\u7acb\u81ea\u52d5\u8f09\u5165\u8173\u672c\u2026\n[  66% ] first_scan_filesystem | \u521d\u59cb\u5316\u5916\u639b\u7a0b\u5f0f...\n[  83% ] first_scan_filesystem | \u958b\u59cb\u6383\u63cf\u6a94\u6848...\n[ DONE ] first_scan_filesystem\n\n[   0% ] update_scripts_classes | Started \u8a3b\u518a\u5168\u57df\u985e\u5225\u4e2d... (13 steps)\n[   0% ] update_scripts_classes | BreakableTerrain\n[   7% ] update_scripts_classes | PlayerBody\n[  14% ] update_scripts_classes | ProjectileBody\n[  21% ] update_scripts_classes | TacticalEnemy\n[  28% ] update_scripts_classes | TargetBody\n[  35% ] update_scripts_classes | WarriorBody\n[  42% ] update_scripts_classes | ShotRules\n[  50% ] update_scripts_classes | TacticalRules\n[  57% ] update_scripts_classes | TerrainRules\n[  64% ] update_scripts_classes | \n[  71% ] update_scripts_classes | \n[  78% ] update_scripts_classes | \n[  85% ] update_scripts_classes | \n[ DONE ] update_scripts_classes\n\n[   0% ] loading_editor_layout | Started \u6b63\u5728\u8f09\u5165\u7de8\u8f2f\u5668 (5 steps)\n[   0% ] loading_editor_layout | \u6b63\u5728\u8f09\u5165\u7de8\u8f2f\u5668\u4f48\u5c40\u2026\n[  16% ] loading_editor_layout | \u6b63\u5728\u8f09\u5165\u9762\u677f\u2026\n[ DONE ] loading_editor_layout\n\n"
+    },
+    {
+      "arguments": [
+        "--quit-after",
+        "8"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "log": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n"
+    }
+  ]
+}
