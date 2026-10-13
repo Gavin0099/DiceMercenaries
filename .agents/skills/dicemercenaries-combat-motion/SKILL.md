@@ -7,6 +7,10 @@ description: Design and implement readable DiceMercenaries character cutout anim
 
 讀當次要求、PLAN.md、docs/GAME_PLAN.md、目前切片及實際 Godot renderer；記錄 branch／commit／dirty state，保存同場景基線。區分提案、素材、比較工具及原生整合，按授權完成可逆改進。讀 [原生事件與分層](references/native-contract.md)、[比較與交付](references/review.md)，素材工作使用 `$dicemercenaries-character-art`；來源見 [sources.md](references/sources.md)。
 
+## 共用介面
+
+先讀 [全戰場介面](references/game-ui.md)。將瞄準、生命值、危險、案例切換及結果放在同一資訊層級；實際 Godot 小視窗、縮放文字與降低動態分開驗證。不要為排版添加不存在的技能或費用，也不要將 TacticalGo UI20 核准移轉。
+
 ## 讓動作可讀
 
 使用「輸入／瞄準 → 預備 → 發射 → 真實接觸 → 擊退或破壞 → 落地 → 可操作」語法。出手、道具、接觸及落定分開；碎片及全身彈跳不能代替身體演技。
