@@ -18,3 +18,7 @@ No G1/G2/G3 acceptance; no merge/release authorization. See docs/GOVERNANCE_ADOP
 - DM-02 #5 stacks on DOC-01 #4; packaging cleanup fixed after final CI Windows lock failure, latest motion v1.7 adapted; hosted retest pending. <!-- memory_record_projection:active-task-summary:db673518ab8c1260c46198c3bc7cc7a12f593c6a0fd44b935f75e0284dcb514a -->
 
 - DOC-01 #4 knowledge-base candidate precedes DM-02 #5; terrain/native tests, refreshed v1.7 skills and Windows cleanup verified. Human G1 and complete governance pending. <!-- memory_record_projection:active-task-summary:9a2f1410d2f1a4617ccd9f6a7c494d2884c64caf4edf1b5eece4ef9c3588c43a -->
+
+- Godot resource hub and priority plan prepared locally; 29 local links checked. DM-02 Windows playtest requested first. Human gates and partial governance remain open. <!-- memory_record_projection:active-task-summary:d51675c9cf90b889bf3cfd9aa16a16c4112ce8be35795c9df4fd7213f69d7874 -->
+
+- TACT-01 warrior prototype implemented/reviewed: Windows native tests, replay and extracted package PASS. Fixed roll comparison only; hosted CI and human acceptance pending; no merge/release. <!-- memory_record_projection:active-task-summary:f11e4c8bc8d91aac5c092feb04ebd356564f568158af548cf2445b497a14cbfc -->
