@@ -1,0 +1,20 @@
+{
+  "receipt_schema": "test_evidence_receipt.v0.1",
+  "command": "python artifacts/evidence/dm-02/check_package_cleanup.py",
+  "started_at": "2026-10-13T11:19:58.762864+00:00",
+  "finished_at": "2026-10-13T11:19:58.937588+00:00",
+  "runner": "Linux Python fixture simulates WinError 32; hosted Windows retest required",
+  "linked_commit": "15449563190cb9aee57bcb855c17d1de872c7f53",
+  "exit_code": 0,
+  "output": "PACKAGE_CLEANUP_FIXTURE_PASS cases=3\n",
+  "output_artifacts": [
+    "artifacts/evidence/dm-02/cleanup-check.json"
+  ],
+  "cannot_claim": [
+    "Windows process behavior from mocked fixture",
+    "human gameplay"
+  ],
+  "failed_ci_run": 38388866151,
+  "failure": "Windows temporary cleanup sharing violation on Godot.exe after native checks; bounded retry added, other errors still propagate.",
+  "verifier_sha256": "86f229448364149b01e09ef8e09901f71db7d937bd369885c5edb53b666d84af"
+}

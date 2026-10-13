@@ -1,0 +1,15 @@
+{
+  "run_id": 38389395738,
+  "url": "https://github.com/Gavin0099/DiceMercenaries/actions/runs/38389395738",
+  "pr_head": "15449563190cb9aee57bcb855c17d1de872c7f53",
+  "jobs": {
+    "windows": "success",
+    "linux": "success"
+  },
+  "verified": [
+    "native rules/integration",
+    "Linux player-shot replay",
+    "Windows fresh extracted import/startup after bounded sharing-lock cleanup"
+  ],
+  "note": "PR merge-ref checkout; native gameplay/test source hashes are unchanged from prior retained receipts. Packaging tool changed; fixture receipt binds fix source. Delivered Windows ZIP is from successful run 38388234266 and has identical game sources; verifier is not shipped in that ZIP."
+}
