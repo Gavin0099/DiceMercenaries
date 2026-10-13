@@ -15,6 +15,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     steps:
+      - name: Enable Windows Git long paths before submodule checkout
+        if: runner.os == 'Windows'
+        run: git config --global core.longpaths true
       - uses: actions/checkout@v4
         with:
           submodules: recursive
@@ -45,9 +48,10 @@ jobs:
         shell: python
         run: |
           import os, subprocess
-          subprocess.run(['python', 'tools/check_project.py', '--godot', os.environ['DM_GODOT']], check=True)
+          output = os.path.join(os.environ['RUNNER_TEMP'], 'dm00-native-check.json')
+          subprocess.run(['python', 'tools/check_project.py', '--godot', os.environ['DM_GODOT'], '--output', output], check=True)
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: dm00-${{ matrix.os }}-${{ github.sha }}
-          path: artifacts/evidence/dm-00/*.json
+          path: ${{ runner.temp }}/dm00-native-check.json

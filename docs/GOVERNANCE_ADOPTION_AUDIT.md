@@ -32,3 +32,7 @@ Before DM-01: decide supported GDScript routing through framework's existing ext
 ## Delivery provenance
 Remote candidates are snapshot commits with the authorized README bootstrap ancestry. Prior local implementation and evidence commits remain historical references: governance f88756e; DM-00 6d6b4e0. Historical evidence is not relabeled as remote-head evidence.
 No gameplay code, merge, deployment or publication in this delivery.
+
+## Hosted evidence and correction
+Governance PR #1 drift run 38380413033 passed. DM-00 PR #2 run 38380577054: Ubuntu native checks passed; Windows failed during governance submodule checkout with Filename too long, before engine execution. Historical JSON evidence was uploaded by the old wildcard artifact path even on Windows checkout failure; this is not Windows evidence.
+Correction in DM-00: configure core.longpaths before Windows checkout; write native result to RUNNER_TEMP and upload only that exact file. Verification is the same hosted checkout/native matrix; no gameplay or governance-policy change. Local current-remote-head native check b80a178 passed; memory authority and drift checks also passed. Windows correction not verified until next hosted run.
