@@ -1,0 +1,49 @@
+{
+  "type": "author-process workflow review",
+  "implementation_head": "6cfd76d96187728ed60519fc67db0047cd3166fd",
+  "base_head": "a7a20169401a9cffe029a4f6719466226e2be5e2",
+  "status": "no blocking finding in S4 workflow scope",
+  "allowed_implementation_paths": [
+    ".github/workflows/dm-00.yml",
+    ".github/workflows/governance-drift.yml"
+  ],
+  "checks": [
+    "All PR target branches covered",
+    "Recursive pinned framework and full history checkout",
+    "Existing official Godot SHA512 pins retained",
+    "Fresh native wrapper and four actual-engine cases required on both OS",
+    "Only two fresh runtime output paths uploaded",
+    "Read-only GitHub permissions",
+    "Memory current diff computed from PR base/push before with manual-run parent fallback",
+    "Current authority guard blocks existing blocker codes; report-only warnings retained"
+  ],
+  "local_validation": [
+    "YAML parse + embedded Python AST parse",
+    "drift.json",
+    "memory-authority.json",
+    "memory-range.json"
+  ],
+  "hosted_validation": "pending on delivered final head",
+  "not_claimed": [
+    "branch protection or bypass prevention",
+    "independent technical approval",
+    "platform memory lifecycle",
+    "formal memory evidence qualification",
+    "gameplay",
+    "full adoption",
+    "consumer merge"
+  ],
+  "latest_implementation_head": "ab35f46a728af8669ebc907580b37dee728f3bb0",
+  "observed_failure": {
+    "head": "30345284f7d89c77d5f29f1688344ebc3328fdac",
+    "push_run": 38518475296,
+    "pr_run": 38518501173,
+    "platforms": [
+      "ubuntu-latest",
+      "windows-latest"
+    ],
+    "cause": "No module named 'yaml'",
+    "evidence": "memory/evidence/s4-ci/failed-push-linux/dm-native-governance.json"
+  },
+  "repair": "Native workflow installs PyYAML==6.0.3, compatible with framework requirements.txt pyyaml>=6.0; validator verdict and enforcement unchanged"
+}
