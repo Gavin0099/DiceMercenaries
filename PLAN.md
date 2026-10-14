@@ -1,6 +1,6 @@
 # DiceMercenaries PLAN
 
-> **最後更新**: 2026-10-13
+> **最後更新**: 2026-10-14
 > **Owner**: Gavin0099
 > **Freshness**: Sprint (7d)
 
@@ -8,6 +8,12 @@
 Governance onboarding candidate, followed by DM-00. Owner acceptance pending.
 
 ## Active Sprint
+- S3 delivery: owner authorized review, commit/push and a Draft PR stacked on
+  DM-00 on 2026-10-14. Framework pin 2a09d542, explicit native validator and
+  pre/post-task acceptance; Windows interface tests and four native failure
+  replays passed locally. Independent review and Owner acceptance pending.
+- S4 CI: separately authorized after S3 delivery; Windows/Linux native checks
+  and memory checks must pass on its latest Draft head. No consumer merge.
 - GOV-00: pinned submodule, baseline, repo instructions, installed local hooks, runtime smoke and reviewer evidence.
 - DM-00: independent Godot 4.7.2 project, empty main scene, headless test entry, Windows CI.
 - Each slice has its own branch and Draft PR. No merge, deploy or release.
@@ -23,6 +29,8 @@ DM-01 onward follow docs/GAME_PLAN.md §12 and G1/G2/G3. Do not start until prec
 
 ## Known Risks
 - Governance completion cannot be self-declared; final authority is Owner/reviewer.
-- GDScript is absent from framework language enum; no framework rule modified. Python describes tooling only.
-- Windows runtime evidence pending until runner execution; Linux success is insufficient.
+- GDScript is available from the adopted framework checkout. The historical F-7 apply reported partial
+  adoption; committing the pin alone does not prove complete adoption.
+- S3 Windows native evidence is local. Hosted Windows/Linux and S4 remain
+  separate gates; no CI workflow changed in this slice.
 - No gameplay gate has passed.
