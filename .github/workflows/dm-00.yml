@@ -25,6 +25,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install pinned framework runtime dependency
+        run: python -m pip install PyYAML==6.0.3
       - name: Download pinned official engine and verify checksum
         shell: python
         run: |
