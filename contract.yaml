@@ -15,4 +15,5 @@ ai_behavior_override:
   - AGENTS.base.md
 rule_roots:
   - governance/rules
-validators: []
+validators:
+  - governance/validators/native_project.py

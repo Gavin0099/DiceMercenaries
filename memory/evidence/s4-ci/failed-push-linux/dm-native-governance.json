@@ -1,0 +1,19 @@
+{
+  "ok": false,
+  "framework_root": "/home/runner/work/DiceMercenaries/DiceMercenaries/.ai-governance-framework",
+  "candidate_framework_override": false,
+  "source_commit": "30345284f7d89c77d5f29f1688344ebc3328fdac",
+  "not_claimed": [
+    "gameplay",
+    "Owner acceptance",
+    "full adoption",
+    "hosted CI"
+  ],
+  "consumer_adapter_source_sha256": {
+    "contract.yaml": "90843ef71ce14ca78ebbb9cf611609420608edf4c4e698144969f0abafee9583",
+    "governance/validators/native_project.py": "6d6cd769ba18e61e319c45d3beaf1a91d15ad6919cbd4760f704f37bd207279e",
+    "tools/check_governance.py": "45217378fea50f9d605a123d450a35477e5d46d7389b0b5fcb46f8dc3764b958",
+    "tests/governance/test_native_validator.py": "177d003525fef014eed9aba4ac43d16f094b1cd2f3f7a7335dea08825fb944ee"
+  },
+  "error": "No module named 'yaml'"
+}

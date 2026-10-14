@@ -1,0 +1,128 @@
+
+[governance] memory workflow advisory: memory/** changes detected
+  run: python -m governance_tools.memory_workflow --check --repo . --run-guard
+  warning_codes=missing_canonical_memory
+  completion_claim_allowed=True
+  note: pre-commit advisory only; commit is not blocked by this check
+
+[governance] manual update advisory: governed update evidence is incomplete
+  signal: lock_vs_checkout_mismatch+missing_update_receipt
+  lock_consistency: inconsistent
+  update_receipt_status: missing
+  touched_update_paths:
+    - ai-governance-framework
+    - governance/framework.lock.json
+  reasons:
+    - update-related paths changed while lock_consistency is not consistent
+    - framework lock and checkout are not consistent
+    - governance/framework.lock.json is staged without a staged governance/.update-receipt.json update receipt
+    - lock_file_dirty=true
+    - lock_adopted_commit=b74bbde22727391dadfdc017cb1bad9c20169ad6
+    - framework_head=b74bbde22727391dadfdc017cb1bad9c20169ad6
+    - no fetch was performed; this is a local lock-vs-checkout comparison
+    - working-tree lock matches checkout HEAD but is not committed
+  recommended_action: If this is a manual update, report manual_update and do not claim completed/latest/full adoption. To complete a governed update, run the updater/F-7 path and relay the human_readable_adoption_summary table.
+  cannot_claim:
+    - staged framework lock change came from updater/F-7 apply path
+    - framework lock matches checked-out framework commit
+    - governed updater/F-7 path was used
+    - full governance adoption
+    - hook/CI enforcement
+  note: advisory only; commit is not blocked by this check
+[chore/dm-governance 903183c] chore(governance): adopt pinned framework and repo review boundaries
+ 95 files changed, 12137 insertions(+)
+ create mode 100644 .gitattributes
+ create mode 100644 .github/copilot-instructions.md
+ create mode 100644 .github/hooks/.ai-governance-managed.json
+ create mode 100644 .github/hooks/ai-governance-copilot.json
+ create mode 100644 .github/hooks/ai-governance-lifecycle.py
+ create mode 100644 .github/hooks/ai-governance-vscode.json
+ create mode 100644 .github/pull_request_template.md
+ create mode 100644 .github/workflows/governance-drift.yml
+ create mode 100644 .gitignore
+ create mode 100644 .gitmodules
+ create mode 100644 .governance-payload-config.yaml
+ create mode 100644 .governance/baseline.yaml
+ create mode 100644 .governance/evidence/hooks.txt
+ create mode 100644 .governance/evidence/maturity.txt
+ create mode 100644 .governance/evidence/memory-workflow.txt
+ create mode 100644 .governance/evidence/readiness.txt
+ create mode 100644 .governance/evidence/runtime-smoke.json
+ create mode 100644 .governance/version_manifest.yaml
+ create mode 100644 AGENTS.base.md
+ create mode 100644 AGENTS.md
+ create mode 100644 CLAUDE.md
+ create mode 100644 GEMINI.md
+ create mode 100644 PLAN.md
+ create mode 100644 README.md
+ create mode 160000 ai-governance-framework
+ create mode 100644 contract.yaml
+ create mode 100644 docs/GAME_PLAN.md
+ create mode 100644 docs/GOVERNANCE_ONBOARDING.md
+ create mode 100644 governance/AGENT.md
+ create mode 100644 governance/AI_GOVERNANCE_UPDATE_PROTOCOL.md
+ create mode 100644 governance/ARCHITECTURE.md
+ create mode 100644 governance/AUTHORITY.md
+ create mode 100644 governance/CLAIM_ENFORCEMENT_EVIDENCE_POLICY.md
+ create mode 100644 governance/CONFIDENCE_SEMANTICS_FREEZE.md
+ create mode 100644 governance/EPISTEMIC_BASE_ASSUMPTIONS.md
+ create mode 100644 governance/F7_FULL_UPDATE.md
+ create mode 100644 governance/GOVERNANCE_SURFACE_RULES.md
+ create mode 100644 governance/HUMAN-OVERSIGHT.md
+ create mode 100644 governance/MEMORY_AUTHORITY_CONTRACT.md
+ create mode 100644 governance/MEMORY_PROTOCOL.md
+ create mode 100644 governance/MEMORY_RECONCILIATION_ENCODING_INTEGRITY_CONTRACT.md
+ create mode 100644 governance/MEMORY_RECONCILIATION_EXACT_BYTE_DETECTOR_CONTRACT.md
+ create mode 100644 governance/MEMORY_RECONCILIATION_FIXTURE_ADMISSIBILITY_CONTRACT.md
+ create mode 100644 governance/MEMORY_RECONCILIATION_KNOWLEDGE_IDENTITY_CONTRACT.md
+ create mode 100644 governance/MEMORY_RECONCILIATION_MISSING_LOGICAL_SURFACE_CONTRACT.md
+ create mode 100644 governance/MEMORY_SURFACE_AUTHORITY_CONTRACT.md
+ create mode 100644 governance/METRIC_INTERPRETABILITY_CONTRACT.md
+ create mode 100644 governance/NATIVE-INTEROP.md
+ create mode 100644 governance/NULL_ONTOLOGY.md
+ create mode 100644 governance/PHASE_D_CLOSE_AUTHORITY.md
+ create mode 100644 governance/RESPONSE_ENVELOPE_CONTRACT.md
+ create mode 100644 governance/REVIEW_CRITERIA.md
+ create mode 100644 governance/RULE_REGISTRY.md
+ create mode 100644 governance/RUNTIME_CONTRACT.md
+ create mode 100644 governance/SEMANTIC_FAILURE_MODES.md
+ create mode 100644 governance/SEMANTIC_FAILURE_TAXONOMY.md
+ create mode 100644 governance/SOLO_OWNER_MERGE_AUTHORITY_CONTRACT.md
+ create mode 100644 governance/STRUCTURAL_PROMOTION_CONTRACT.md
+ create mode 100644 governance/STRUCTURAL_PROMOTION_COVERAGE_CLOSEOUT_2026-04-30.md
+ create mode 100644 governance/STRUCTURAL_PROMOTION_DECISION_2026-04-30_CLAIM_DISCIPLINE_GUARDRAIL.md
+ create mode 100644 governance/STRUCTURAL_PROMOTION_DECISION_2026-04-30_CONVENTIONS.md
+ create mode 100644 governance/SYSTEM_PROMPT.md
+ create mode 100644 governance/TESTING.md
+ create mode 100644 governance/agent-contract-template.md
+ create mode 100644 governance/copilot-instructions-template.md
+ create mode 100644 governance/external-tree-inventory-guard.json
+ create mode 100644 governance/framework.lock.json
+ create mode 100644 governance/gate_policy.yaml
+ create mode 100644 governance/rules/avalonia/ui_thread.md
+ create mode 100644 governance/rules/avalonia/viewmodel_boundary.md
+ create mode 100644 governance/rules/common/core.md
+ create mode 100644 governance/rules/cpp/build_boundary.md
+ create mode 100644 governance/rules/csharp/native_boundary.md
+ create mode 100644 governance/rules/csharp/threading.md
+ create mode 100644 governance/rules/gl-hub-vendor-cmd/spec-truth.md
+ create mode 100644 governance/rules/kernel-driver/cleanup-unwind.md
+ create mode 100644 governance/rules/kernel-driver/irql.md
+ create mode 100644 governance/rules/kernel-driver/memory-boundary.md
+ create mode 100644 governance/rules/python/coding.md
+ create mode 100644 governance/rules/refactor/behavior_lock.md
+ create mode 100644 governance/rules/refactor/boundary_safety.md
+ create mode 100644 governance/rules/refactor/error_path_coverage.md
+ create mode 100644 governance/rules/refactor/interface_stability.md
+ create mode 100644 governance/rules/refactor/no_partial_cleanup.md
+ create mode 100644 governance/rules/refactor/required_regression_tests.md
+ create mode 100644 governance/rules/swift/concurrency.md
+ create mode 100644 governance/rules/swift/native_interop.md
+ create mode 100644 governance/runtime/required_versions.yaml
+ create mode 100644 governance/runtime/runtime_phase_policy.yaml
+ create mode 100644 governance/runtime/validator_signal_registry.json
+ create mode 100644 memory/01_active_task.md
+ create mode 100644 memory/02_tech_stack.md
+ create mode 100644 memory/02_workflow.md
+ create mode 100644 memory/03_knowledge_base.md
+ create mode 100644 memory/04_review_log.md

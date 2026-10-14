@@ -1,0 +1,39 @@
+{
+  "repo_root": "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3",
+  "mode": "ci_selective_current_diff",
+  "changed_files": [
+    "github/workflows/dm-00.yml",
+    "github/workflows/governance-drift.yml"
+  ],
+  "changed_memory_files": [],
+  "active_non_canonical_writer_count": 0,
+  "current_diff_active_non_canonical_writer_count": 0,
+  "repo_state_b0_blocker_count": 0,
+  "current_diff_b0_blocker_count": 0,
+  "blockers": [],
+  "warnings": [
+    "unbound_memory=4",
+    "test_evidence_provenance_not_found=1",
+    "closeout_companion_not_observed=1"
+  ],
+  "mixed_scope_memory_binding_count": 0,
+  "mixed_scope_findings": [],
+  "closeout_companion_not_observed_count": 1,
+  "closeout_companion_findings": [
+    {
+      "code": "closeout_companion_not_observed",
+      "enforcement": "report_only",
+      "scope_ref": "a7a20169401a9cffe029a4f6719466226e2be5e2..HEAD",
+      "non_closeout_commits": [
+        "6cfd76d96187728ed60519fc67db0047cd3166fd"
+      ],
+      "non_closeout_paths": [
+        "github/workflows/dm-00.yml",
+        "github/workflows/governance-drift.yml"
+      ],
+      "observed_bound_commits": [],
+      "reason": "the inspected commit range changes non-closeout paths, but no added canonical memory entry binds a non-closeout commit in that range"
+    }
+  ],
+  "clean": true
+}

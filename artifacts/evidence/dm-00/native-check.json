@@ -1,0 +1,71 @@
+{
+  "slice": "DM-00",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "source_commit": "3feade22ead26264c5c762a7433077753b168e9f",
+  "worktree_changes": [
+    " M memory/01_active_task.md",
+    "?? artifacts/"
+  ],
+  "source_files_sha256": {
+    "project.godot": "8f72fdf0b0980e6f552ea7113db57c04781f03cfa88559f92097b79db59c2471",
+    "scenes/ui/bootstrap.tscn": "0b90de4e293c30b419c55d13e9c657075b0e4746ba4d82da992cbe0bb5b03b79",
+    "tests/integration/test_bootstrap.gd": "188b369dc1d45675cc0e5d002ecf9a551fa901865cc421b29d7629ceeef5e42a",
+    "tools/check_project.py": "16c432dd494da30ae708a0d0700e847a7a351c955bd63d98426294a30007a44d"
+  },
+  "checks": [
+    {
+      "command": [
+        "../tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+        "--version"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "4.7.2.stable.official.ed1daf0bf\n"
+    },
+    {
+      "command": [
+        "../tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+        "--path",
+        "/workspace/scratch/1ae49dba32c3/DiceMercenaries",
+        "--headless",
+        "--editor",
+        "--import"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Started Project initialization (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Scanning file structure...\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Loading global class names...\u001b[39m\u001b[0m\n[  33% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Verifying GDExtensions...\u001b[39m\u001b[0m\n[  50% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Creating autoload scripts...\u001b[39m\u001b[0m\n[  66% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Initializing plugins...\u001b[39m\u001b[0m\n[  83% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Starting file scan...\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mfirst_scan_filesystem\u001b[22m\n\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Started Loading editor (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading editor layout...\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading docks...\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mloading_editor_layout\u001b[22m\n\u001b[0m\n"
+    },
+    {
+      "command": [
+        "../tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+        "--path",
+        "/workspace/scratch/1ae49dba32c3/DiceMercenaries",
+        "--headless",
+        "--script",
+        "res://tests/integration/test_bootstrap.gd"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nDM00_BOOTSTRAP_PASS\n"
+    },
+    {
+      "command": [
+        "../tools-runtime/Godot_v4.7.2-stable_linux.x86_64",
+        "--path",
+        "/workspace/scratch/1ae49dba32c3/DiceMercenaries",
+        "--headless",
+        "--quit-after",
+        "3"
+      ],
+      "returncode": 0,
+      "ok": true,
+      "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n"
+    }
+  ],
+  "ok": true,
+  "not_claimed": [
+    "gameplay",
+    "Windows when run on Linux",
+    "Owner acceptance"
+  ]
+}

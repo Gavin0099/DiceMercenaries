@@ -1,6 +1,6 @@
 # DiceMercenaries PLAN
 
-> **最後更新**: 2026-10-13
+> **最後更新**: 2026-10-14
 > **Owner**: Gavin0099
 > **Freshness**: Sprint (7d)
 
@@ -8,6 +8,15 @@
 Governance onboarding candidate, followed by DM-00. Owner acceptance pending.
 
 ## Active Sprint
+- S3 delivery: Draft PR #8 stacks on DM-00. Framework pin 2a09d542, explicit
+  native validator and pre/post-task acceptance; Windows interface tests and
+  four native failure replays passed locally. Author review found no blocking
+  finding; independent review and Owner acceptance pending.
+- S4 CI: implementation 6cfd76d9 updates only two workflows, covering all
+  PR bases with Windows/Linux native acceptance and current-diff memory checks.
+  Local workflow/drift/memory checks passed. First hosted native run exposed a
+  missing PyYAML dependency; repair ab35f46a pins PyYAML6.0.3, latest CI pending.
+  Separate stacked Draft authorized. No consumer merge.
 - GOV-00: pinned submodule, baseline, repo instructions, installed local hooks, runtime smoke and reviewer evidence.
 - DM-00: independent Godot 4.7.2 project, empty main scene, headless test entry, Windows CI.
 - Each slice has its own branch and Draft PR. No merge, deploy or release.
@@ -23,6 +32,8 @@ DM-01 onward follow docs/GAME_PLAN.md §12 and G1/G2/G3. Do not start until prec
 
 ## Known Risks
 - Governance completion cannot be self-declared; final authority is Owner/reviewer.
-- GDScript is absent from framework language enum; no framework rule modified. Python describes tooling only.
-- Windows runtime evidence pending until runner execution; Linux success is insufficient.
+- GDScript is available from the adopted framework checkout. The historical F-7 apply reported partial
+  adoption; committing the pin alone does not prove complete adoption.
+- S3 native evidence is local. S4 hosted Windows/Linux and memory checks remain
+  a separate delivery gate; green checks do not establish branch protection.
 - No gameplay gate has passed.

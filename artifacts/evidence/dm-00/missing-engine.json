@@ -1,0 +1,29 @@
+{
+  "slice": "DM-00",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "source_commit": "f88756ed4ec06fdf92b1830647f3419e47006da0",
+  "worktree_changes": [
+    "?? .github/workflows/dm-00.yml",
+    "?? artifacts/",
+    "?? assets/",
+    "?? data/",
+    "?? docs/BALANCE.md",
+    "?? docs/DECISIONS.md",
+    "?? docs/PLAYTEST.md",
+    "?? docs/RULES_D20.md",
+    "?? docs/slices/",
+    "?? project.godot",
+    "?? scenes/",
+    "?? scripts/",
+    "?? tests/",
+    "?? tools/"
+  ],
+  "checks": [],
+  "ok": false,
+  "not_claimed": [
+    "gameplay",
+    "Windows when run on Linux",
+    "Owner acceptance"
+  ],
+  "error": "[Errno 2] No such file or directory: '/nonexistent/dm-godot'"
+}

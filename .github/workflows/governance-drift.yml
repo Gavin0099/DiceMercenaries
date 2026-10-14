@@ -1,25 +1,13 @@
-name: Governance Drift
+name: Governance Checks
 
 on:
   push:
     branches: [main]
-    paths:
-      - ".governance/**"
-      - "AGENTS.base.md"
-      - "AGENTS.md"
-      - "PLAN.md"
-      - "contract.yaml"
-      - "governance/**"
   pull_request:
-    branches: [main]
-    paths:
-      - ".governance/**"
-      - "AGENTS.base.md"
-      - "AGENTS.md"
-      - "PLAN.md"
-      - "contract.yaml"
-      - "governance/**"
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   governance-drift:
@@ -29,6 +17,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -40,3 +29,17 @@ jobs:
             --repo . \
             --framework-root .ai-governance-framework \
             --format human
+      - name: Memory authority and workflow checks
+        shell: python
+        env:
+          DM_MEMORY_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          import os, pathlib, subprocess, sys
+          framework = pathlib.Path('.ai-governance-framework').resolve()
+          env = dict(os.environ, PYTHONPATH=str(framework))
+          subprocess.run([sys.executable, '-m', 'governance_tools.memory_workflow', '--check', '--repo', '.', '--run-guard', '--fail-on-blocker'], env=env, check=True)
+          base = os.environ.get('DM_MEMORY_BASE', '')
+          if not base or set(base) == {'0'}:
+              previous = subprocess.run(['git', 'rev-parse', 'HEAD^'], capture_output=True, text=True)
+              base = previous.stdout.strip() if previous.returncode == 0 else 'HEAD'
+          subprocess.run([sys.executable, '-m', 'governance_tools.ci_memory_workflow_check', '--project-root', '.', '--base-ref', base, '--head-ref', 'HEAD', '--format', 'json'], env=env, check=True)
