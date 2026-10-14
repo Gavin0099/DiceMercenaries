@@ -1,0 +1,50 @@
+{
+  "mode": "VALIDATION",
+  "mode_source": "validation_command",
+  "task": "S3 local governed pin adoption and native acceptance",
+  "task_authority": "user_request",
+  "scope": [
+    "Clean dm-s3 checkout at c90de451",
+    "Governed F7 pin2a09d542 and managed instruction/hook/lock surfaces",
+    "Explicit native adapter/tool/tests/rule/doc paths",
+    "Canonical PLAN/daily/active-task memory"
+  ],
+  "done": [
+    "Fresh remote F7 fetch adopted2a09d542 locally; lock matches checkout but is uncommitted",
+    "Default pinned healthy pre/post path passed without override;8 interface tests passed",
+    "Four real engine fixtures matched expected outcomes, game source preserved",
+    "Existing original S3/S4 candidate hashes/status preserved; no CI workflow changes",
+    "Canonical memory writer used; current-diff memory guard blockers0; scoped diff check passed"
+  ],
+  "claim_ceiling": [
+    "Local uncommitted S3 candidate and Windows native acceptance only",
+    "F7 remains partially_updated and adoption partial; no committed delivery or overall task DONE"
+  ],
+  "not_claimed": [
+    "Commit/push/PR publication/consumer merge",
+    "S4 or hosted Linux/Windows checks",
+    "Gameplay or G1/G2/G3 acceptance, proposed classification approval",
+    "Full governance adoption, automatic memory lifecycle, full runtime/CI enforcement",
+    "Formal memory evidence qualification or committed candidate validation",
+    "Session end or closeout"
+  ],
+  "evidence_refs": [
+    "memory/evidence/s3-adoption/f7-dry-run.json",
+    "memory/evidence/s3-adoption/f7-apply.json",
+    "memory/evidence/s3-adoption/f7-final-check.json",
+    "memory/evidence/s3-adoption/runtime-initial.json",
+    "memory/evidence/s3-adoption/native-cases-initial.json",
+    "memory/evidence/s3-adoption/memory-workflow.json",
+    "docs/GDSCRIPT_ADOPTION.md"
+  ],
+  "risk": [
+    "Updated pin/lock and adapter code are local dirty/untracked candidate; workspace NOT CLEAN",
+    "Disposable native cases reuse adopted framework by explicit path; default root acceptance is separately verified without override",
+    "Static summary runtime/memory fields remain not_checked; bounded S3 execution is separate evidence"
+  ],
+  "next_action": "Review S3 candidate for its separate delivery decision; S4 hosted CI remains another bounded slice",
+  "f7_status": "partially_updated",
+  "adoption_status": "partial",
+  "workspace_state": "NOT CLEAN",
+  "overall_task": "NOT DONE; local acceptance evidence only"
+}

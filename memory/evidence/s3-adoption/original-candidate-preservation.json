@@ -1,0 +1,29 @@
+{
+  "unchanged": true,
+  "before": {
+    "head": "c90de45118e0802c1f72dd0d6f9a091654dfe195",
+    "status": " M .github/workflows/dm-00.yml\n M .github/workflows/governance-drift.yml\n M PLAN.md\n M contract.yaml\n M memory/01_active_task.md\n M memory/2026-10-13.md\n?? docs/GDSCRIPT_ADOPTION.md\n?? governance/rules/dm-native-check/\n?? governance/validators/\n?? memory/evidence/\n?? tests/governance/\n?? tools/check_governance.py\n?? tools/test_native_acceptance.py\n",
+    "files": {
+      "contract.yaml": "90843ef71ce14ca78ebbb9cf611609420608edf4c4e698144969f0abafee9583",
+      "governance/validators/native_project.py": "6d6cd769ba18e61e319c45d3beaf1a91d15ad6919cbd4760f704f37bd207279e",
+      "governance/rules/dm-native-check/acceptance.md": "ff317a5a3f4f4b17f6f86819ee6525f5700201b2c81f530976fe78a800b532eb",
+      "tools/check_governance.py": "45217378fea50f9d605a123d450a35477e5d46d7389b0b5fcb46f8dc3764b958",
+      "tools/test_native_acceptance.py": "43d6c95a02a0d80a2e0170904987b4c8b7bfcd5e9aeb89410ab5d206fcb70690",
+      "tests/governance/test_native_validator.py": "177d003525fef014eed9aba4ac43d16f094b1cd2f3f7a7335dea08825fb944ee",
+      "docs/GDSCRIPT_ADOPTION.md": "6216872a36d6b56761924110c11c321f4b449221612e19eaf4cde00c71e1fb7c"
+    }
+  },
+  "after": {
+    "head": "c90de45118e0802c1f72dd0d6f9a091654dfe195",
+    "status": " M .github/workflows/dm-00.yml\n M .github/workflows/governance-drift.yml\n M PLAN.md\n M contract.yaml\n M memory/01_active_task.md\n M memory/2026-10-13.md\n?? docs/GDSCRIPT_ADOPTION.md\n?? governance/rules/dm-native-check/\n?? governance/validators/\n?? memory/evidence/\n?? tests/governance/\n?? tools/check_governance.py\n?? tools/test_native_acceptance.py\n",
+    "files": {
+      "contract.yaml": "90843ef71ce14ca78ebbb9cf611609420608edf4c4e698144969f0abafee9583",
+      "governance/validators/native_project.py": "6d6cd769ba18e61e319c45d3beaf1a91d15ad6919cbd4760f704f37bd207279e",
+      "governance/rules/dm-native-check/acceptance.md": "ff317a5a3f4f4b17f6f86819ee6525f5700201b2c81f530976fe78a800b532eb",
+      "tools/check_governance.py": "45217378fea50f9d605a123d450a35477e5d46d7389b0b5fcb46f8dc3764b958",
+      "tools/test_native_acceptance.py": "43d6c95a02a0d80a2e0170904987b4c8b7bfcd5e9aeb89410ab5d206fcb70690",
+      "tests/governance/test_native_validator.py": "177d003525fef014eed9aba4ac43d16f094b1cd2f3f7a7335dea08825fb944ee",
+      "docs/GDSCRIPT_ADOPTION.md": "6216872a36d6b56761924110c11c321f4b449221612e19eaf4cde00c71e1fb7c"
+    }
+  }
+}

@@ -1,0 +1,1406 @@
+{
+  "ok": true,
+  "mode": "apply",
+  "repo_root": "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3",
+  "repo_role": "submodule_consumer",
+  "f7_final_status": "partially_updated",
+  "stages": {
+    "framework_pointer": "updated",
+    "repo_local_instruction": "already_current",
+    "memory_writer_coverage": "verified",
+    "hook_validator_enforcement": "updated",
+    "existing_memory_normalization": "completed",
+    "gitignore_hygiene": "verified",
+    "target_source": "fresh_remote_fetch_head",
+    "target_fresh_upstream_verified": true,
+    "target_claim_boundary": "fresh upstream target verified; already_current/updated claims are allowed",
+    "governance_maturity_summary": {
+      "report_version": "0.1",
+      "repo_root": "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3",
+      "report_only": true,
+      "user_facing_status": {
+        "value": "partial",
+        "source": "governance_maturity_summary.derived",
+        "reasons": [
+          "Missing surfaces: framework_lock_consistency, validator_surface"
+        ]
+      },
+      "framework_topology": {
+        "value": "submodule_consumer",
+        "source": "adoption_doctor.adoption_class",
+        "reasons": [
+          ".gitmodules declares initialized framework path .ai-governance-framework"
+        ]
+      },
+      "static_self_contained": {
+        "value": "yes",
+        "source": "adoption_doctor.self_contained",
+        "reasons": [
+          "framework root is inside the target repo and required static runtime surfaces are present",
+          "this does not prove hooks installed, pin fresh, runtime smoke passed, all tests passed, or enforcement"
+        ]
+      },
+      "runtime_capable": {
+        "value": "not_checked",
+        "source": "adoption_doctor.runtime_capable",
+        "reasons": [
+          "runtime smoke is out of scope for the static report-only doctor"
+        ]
+      },
+      "hook_config_framework_root": {
+        "value": "inside_repo",
+        "source": "adoption_doctor.hook_config_framework_root",
+        "reasons": [
+          "hook framework-root config points inside repo: .ai-governance-framework"
+        ]
+      },
+      "framework_pin_freshness": {
+        "value": "current_vs_local_tracking",
+        "source": "adoption_doctor.submodule_pin",
+        "reasons": [
+          "framework root .ai-governance-framework HEAD matches the local remote-tracking ref",
+          "this does not prove the pin matches the true current remote head",
+          "remote_tracking_ref=origin/main",
+          "remote_tracking_freshness=observed",
+          "last_fetch=2026-10-14T04:55:02.396807+00:00",
+          "current_vs_local_tracking is not proof of true remote currentness"
+        ]
+      },
+      "lock_consistency": {
+        "value": "inconsistent",
+        "source": "governance_maturity_summary.lock_consistency",
+        "reasons": [
+          "lock_file_dirty=true",
+          "lock_adopted_commit=2a09d542900579e9527e3e08ce18b1d34e056e96",
+          "framework_head=2a09d542900579e9527e3e08ce18b1d34e056e96",
+          "no fetch was performed; this is a local lock-vs-checkout comparison",
+          "working-tree lock matches checkout HEAD but is not committed"
+        ]
+      },
+      "agents_calibration": {
+        "value": "repo_specific_minimal",
+        "source": "agents_calibration_maturity.status",
+        "reasons": [
+          "repo_local_paths_commands_or_boundaries_detected"
+        ]
+      },
+      "repo_specific_rules_present": {
+        "value": true,
+        "source": "agents_calibration_maturity.status",
+        "reasons": [
+          "repo_local_paths_commands_or_boundaries_detected"
+        ]
+      },
+      "domain_contract_present": {
+        "value": true,
+        "source": "domain_contract_loader.resolve_domain_contract",
+        "reasons": [
+          "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\contract.yaml"
+        ]
+      },
+      "validator_surface_present": {
+        "value": false,
+        "source": "domain_contract_loader.load_domain_contract.validators",
+        "reasons": [
+          "no validators declared"
+        ]
+      },
+      "memory_workflow_surface": {
+        "value": "not_checked",
+        "source": "governance_maturity_summary.memory_workflow_surface",
+        "reasons": [
+          "memory consolidation completeness is not inferred by this summary"
+        ]
+      },
+      "human_readable_adoption_summary": [
+        "[human_readable_adoption_summary]",
+        "用途：這段用人類可讀的方式說明 AI Governance 更新後，目前哪些功能已導入、哪些尚未導入或尚未驗證。",
+        "先看結論：",
+        "這份檢查做了什麼：檢查 framework、版本帳本、repo 規則、hooks、領域合約、自動檢查與記憶工作流的可見狀態。",
+        "現在能不能用：可使用已導入的治理檔案；但不能說這個 repo 已完整導入。",
+        "還差什麼：版本帳本與 checkout 已對齊，但版本帳本尚未提交；尚未宣告 repo 專屬自動檢查。",
+        "整體導入狀態：partial - 已有部分 AI Governance 功能，但仍缺少至少一個必要表面.",
+        "需要查技術細項再往下看：",
+        "AI Governance 功能導入狀態：",
+        "| 功能 | 狀態 | 這個功能是做什麼 |",
+        "| --- | --- | --- |",
+        "| 版本帳實一致性（Lock vs checkout consistency） | 已對齊，版本帳本待提交 | 比對 governance/framework.lock.json 的 adopted_commit 與本地 framework checkout HEAD；不做 fetch，也不宣稱真實遠端最新版。 |",
+        "| 框架本體（Framework checkout） | 已可用 | 提供 AI Governance 工具與規則來源；目前偵測到的導入型態是 submodule_consumer。 |",
+        "| 版本新鮮度（Framework version freshness） | 已可用 | 檢查本地 framework 是否追上本地已知 tracking ref；真正遠端最新證據由 updater 另外回報。 |",
+        "| 本 repo 規則（Repo governance instructions） | 已可用 | 讓 agent 進入這個 repo 時知道本 repo 的風險、測試與操作規則。 |",
+        "| 靜態治理檔案（Static framework files） | 已可用 | 提供不跑 runtime 也能讀到的治理文件、規則與導入狀態。 |",
+        "| runtime 治理能力（Runtime-capable governance） | 未驗證 | 代表 repo 是否具備可執行的 runtime governance；只有明確回報已可用時才算導入。 |",
+        "| 本機 commit/push 檢查（Git hooks） | 已可用 | 在本機 commit 或 push 前提示/檢查治理狀態；這不等於所有機器都已強制執行。 |",
+        "| 領域合約（Domain contract） | 已可用 | 用 contract.yaml 宣告這個 repo 自己的治理需求與驗證入口。 |",
+        "| 自動驗證層（Validator surface） | 未導入 | 列出 repo 專屬 validator，讓更新後能知道是否接上自動檢查。 |",
+        "| 記憶工作流（Memory workflow） | 未驗證 | 顯示 memory 寫入/檢查流程是否有被觀測；不代表記憶內容已完整同步。 |",
+        "技術細項：",
+        "- AI Governance framework checkout: present - 偵測到的導入型態是 submodule_consumer",
+        "- Framework version freshness: current_vs_local_tracking - 比較本地 framework 與本地已知 tracking ref；這不是遠端最新 head 的證明",
+        "- Repo governance instructions: 已可用 - AGENTS.md 包含 agent 應遵守的 repo 專屬治理規則",
+        "- Static framework files: yes - 檢查可見 framework 檔案是否足以提供靜態治理指引",
+        "- Runtime-capable governance: not_checked - 這份 summary 不證明 runtime execution 已可用",
+        "- Git hook framework root: inside_repo - 顯示本機 pre-commit/pre-push hooks 指向哪裡；hook 是本機狀態，不代表所有環境都強制執行",
+        "- Domain contract: 已可用 - contract.yaml 宣告 repo 專屬治理合約",
+        "- Validator surface: 未導入 - validator 是 contract 宣告的 repo 專屬自動檢查",
+        "- Memory workflow surface: not_checked - 這份 summary 不推論 memory 是否完整同步",
+        "尚未導入或尚未被證明：",
+        "- framework_lock_consistency: 需要後續處理，不能因此宣稱 full adoption",
+        "- validator_surface: 需要後續處理，不能因此宣稱 full adoption",
+        "白話結論：",
+        "- AI Governance 是部分導入：核心表面已存在，但這個 repo 還不能宣稱完整導入。",
+        "不能從這份 summary 宣稱：",
+        "- domain correctness",
+        "- framework lock matches the checked-out framework commit",
+        "- framework pin matches the true remote head",
+        "- full governance adoption",
+        "- hook or CI enforcement",
+        "- memory consolidation completeness",
+        "- release readiness",
+        "- runtime self-contained governance",
+        "- runtime smoke passed"
+      ],
+      "missing_surfaces": [
+        "framework_lock_consistency",
+        "validator_surface"
+      ],
+      "signal_conflicts": [],
+      "claim_ceiling": {
+        "value": "repo_specific_assisted",
+        "source": "governance_maturity_summary.derived",
+        "reasons": []
+      },
+      "cannot_claim": [
+        "domain correctness",
+        "framework lock matches the checked-out framework commit",
+        "framework pin matches the true remote head",
+        "full governance adoption",
+        "hook or CI enforcement",
+        "memory consolidation completeness",
+        "release readiness",
+        "runtime self-contained governance",
+        "runtime smoke passed"
+      ],
+      "capability_states": {
+        "topology": {
+          "state": "Detected",
+          "source": "adoption_doctor.adoption_class",
+          "reasons": [
+            "topology=submodule_consumer",
+            ".gitmodules declares initialized framework path .ai-governance-framework"
+          ]
+        },
+        "static_runtime_surface": {
+          "state": "Verified",
+          "source": "adoption_doctor.self_contained",
+          "reasons": [
+            "framework root is inside the target repo and required static runtime surfaces are present",
+            "this does not prove hooks installed, pin fresh, runtime smoke passed, all tests passed, or enforcement"
+          ]
+        },
+        "runtime_capable_static": {
+          "state": "Unproven",
+          "source": "adoption_doctor.runtime_capable",
+          "reasons": [
+            "runtime smoke is out of scope for the static report-only doctor"
+          ]
+        },
+        "readiness.contract_files_complete": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.contract_files_complete",
+          "reasons": [
+            "contract_files_complete=true"
+          ]
+        },
+        "readiness.contract_resolved": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.contract_resolved",
+          "reasons": [
+            "contract_resolved=true"
+          ]
+        },
+        "readiness.framework_release_compatible": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.framework_release_compatible",
+          "reasons": [
+            "framework_release_compatible=true"
+          ]
+        },
+        "readiness.framework_source_canonical": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.framework_source_canonical",
+          "reasons": [
+            "framework_source_canonical=true"
+          ]
+        },
+        "readiness.framework_version_current": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.framework_version_current",
+          "reasons": [
+            "framework_version_current=true"
+          ]
+        },
+        "readiness.framework_version_known": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.framework_version_known",
+          "reasons": [
+            "framework_version_known=true"
+          ]
+        },
+        "readiness.git_repo_present": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.git_repo_present",
+          "reasons": [
+            "git_repo_present=true"
+          ]
+        },
+        "readiness.gitlab_adapter_scope_consistent": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.gitlab_adapter_scope_consistent",
+          "reasons": [
+            "gitlab_adapter_scope_consistent=true"
+          ]
+        },
+        "readiness.governance_baseline_present": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.governance_baseline_present",
+          "reasons": [
+            "governance_baseline_present=true"
+          ]
+        },
+        "readiness.governance_drift_clean": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.governance_drift_clean",
+          "reasons": [
+            "governance_drift_clean=true"
+          ]
+        },
+        "readiness.hooks_ready": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.hooks_ready",
+          "reasons": [
+            "hooks_ready=true"
+          ]
+        },
+        "readiness.plan_fresh_enough": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.plan_fresh_enough",
+          "reasons": [
+            "plan_fresh_enough=true"
+          ]
+        },
+        "readiness.plan_present": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.plan_present",
+          "reasons": [
+            "plan_present=true"
+          ]
+        },
+        "readiness.project_facts_drift_free": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.project_facts_drift_free",
+          "reasons": [
+            "project_facts_drift_free=true"
+          ]
+        },
+        "readiness.project_facts_intakeable": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.project_facts_intakeable",
+          "reasons": [
+            "project_facts_intakeable=true"
+          ]
+        },
+        "readiness.project_facts_present": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.project_facts_present",
+          "reasons": [
+            "project_facts_present=true"
+          ]
+        },
+        "readiness.project_facts_schema_complete": {
+          "state": "Verified",
+          "source": "external_repo_readiness.checks.project_facts_schema_complete",
+          "reasons": [
+            "project_facts_schema_complete=true"
+          ]
+        },
+        "readiness.overall": {
+          "state": "Verified",
+          "source": "external_repo_readiness.ready",
+          "reasons": [
+            "external repo readiness returned ready=true"
+          ]
+        },
+        "hook_installation": {
+          "state": "Verified",
+          "source": "hook_install_validator.validate_hook_install",
+          "reasons": [
+            "hook_install_validator returned valid=true"
+          ]
+        },
+        "runtime_evidence": {
+          "state": "Detected",
+          "source": "governance_maturity_summary.runtime_evidence_lookup",
+          "reasons": [
+            "runtime-smoke-like filename(s) found, but no attributable ok=true/false result matched this repo",
+            "Detected is filename-only and is not proof of runtime evidence",
+            "repo_root mismatch: C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.governance\\evidence\\runtime-smoke.json reported_repo_root=C:\\workspace\\scratch\\1ae49dba32c3\\DiceMercenaries",
+            "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.governance\\evidence\\runtime-smoke.json"
+          ]
+        },
+        "external_runtime_execution": {
+          "state": "Not Applicable",
+          "source": "governance_maturity_summary.external_runtime_execution",
+          "reasons": [
+            "external runtime execution applies only when the framework dependency and hook root are external"
+          ]
+        }
+      },
+      "owner_actions": [
+        "Run runtime smoke again to replace filename-only or unattributed runtime evidence."
+      ],
+      "next_safe_command": "python governance_tools/external_repo_smoke.py --repo \"C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\" --contract \"C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\contract.yaml\" --format human",
+      "claim_boundary": "This summary is report-only. It does not prove full governance adoption, runtime self-contained execution, hook enforcement, memory completeness, domain correctness, or release readiness."
+    },
+    "details": {
+      "repo_local_instruction": {
+        "status": "already_current",
+        "changed_files": [],
+        "errors": [],
+        "memory_workflow_router": {
+          "status": "verified",
+          "changed_files": [],
+          "errors": []
+        }
+      },
+      "hook_validator_enforcement": {
+        "status": "updated",
+        "changed_files": [
+          "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.git\\hooks\\pre-commit",
+          "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.git\\hooks\\pre-push",
+          "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.git\\hooks\\ai-governance-framework-root"
+        ],
+        "errors": []
+      },
+      "gitignore_hygiene": {
+        "status": "verified",
+        "changed_files": [],
+        "errors": []
+      },
+      "framework_lock": {
+        "status": "updated",
+        "changed_files": [
+          "governance\\framework.lock.json"
+        ],
+        "errors": []
+      },
+      "target_resolution": {
+        "target_ref": "origin/main",
+        "fetch_remote": "origin",
+        "fetch_ref": "main",
+        "target_source": "fresh_remote_fetch_head",
+        "target_fresh_upstream_verified": true,
+        "target_claim_boundary": "fresh upstream target verified; already_current/updated claims are allowed",
+        "target_head": "2a09d542900579e9527e3e08ce18b1d34e056e96"
+      }
+    },
+    "final_status": "partially_updated",
+    "final_status_scope": "full_update_completion"
+  },
+  "changed_files": [
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.git\\hooks\\ai-governance-framework-root",
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.github\\copilot-instructions.md",
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.github\\hooks\\ai-governance-copilot.json",
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.github\\hooks\\ai-governance-lifecycle.py",
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.github\\hooks\\ai-governance-vscode.json",
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\AGENTS.md",
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\CLAUDE.md",
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\GEMINI.md",
+    "governance/.update-receipt.json"
+  ],
+  "errors": [],
+  "warnings": [],
+  "details": {
+    "submodule_backend": {
+      "ok": true,
+      "mode": "apply",
+      "update_mode": "fast_forward",
+      "fast_forward": true,
+      "repo": "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3",
+      "submodule_path": ".ai-governance-framework",
+      "before_head": "b74bbde22727391dadfdc017cb1bad9c20169ad6",
+      "target_head": "2a09d542900579e9527e3e08ce18b1d34e056e96",
+      "after_head": "2a09d542900579e9527e3e08ce18b1d34e056e96",
+      "staged_files": [],
+      "committed": false,
+      "commit_hash": null,
+      "message": "submodule pointer update complete",
+      "errors": [],
+      "full_update_stage_report": {
+        "framework_pointer": "updated",
+        "repo_local_instruction": "already_current",
+        "memory_writer_coverage": "verified",
+        "hook_validator_enforcement": "updated",
+        "existing_memory_normalization": "completed",
+        "gitignore_hygiene": "verified",
+        "target_source": "fresh_remote_fetch_head",
+        "target_fresh_upstream_verified": true,
+        "target_claim_boundary": "fresh upstream target verified; already_current/updated claims are allowed",
+        "governance_maturity_summary": {
+          "report_version": "0.1",
+          "repo_root": "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3",
+          "report_only": true,
+          "user_facing_status": {
+            "value": "partial",
+            "source": "governance_maturity_summary.derived",
+            "reasons": [
+              "Missing surfaces: framework_lock_consistency, validator_surface"
+            ]
+          },
+          "framework_topology": {
+            "value": "submodule_consumer",
+            "source": "adoption_doctor.adoption_class",
+            "reasons": [
+              ".gitmodules declares initialized framework path .ai-governance-framework"
+            ]
+          },
+          "static_self_contained": {
+            "value": "yes",
+            "source": "adoption_doctor.self_contained",
+            "reasons": [
+              "framework root is inside the target repo and required static runtime surfaces are present",
+              "this does not prove hooks installed, pin fresh, runtime smoke passed, all tests passed, or enforcement"
+            ]
+          },
+          "runtime_capable": {
+            "value": "not_checked",
+            "source": "adoption_doctor.runtime_capable",
+            "reasons": [
+              "runtime smoke is out of scope for the static report-only doctor"
+            ]
+          },
+          "hook_config_framework_root": {
+            "value": "inside_repo",
+            "source": "adoption_doctor.hook_config_framework_root",
+            "reasons": [
+              "hook framework-root config points inside repo: .ai-governance-framework"
+            ]
+          },
+          "framework_pin_freshness": {
+            "value": "current_vs_local_tracking",
+            "source": "adoption_doctor.submodule_pin",
+            "reasons": [
+              "framework root .ai-governance-framework HEAD matches the local remote-tracking ref",
+              "this does not prove the pin matches the true current remote head",
+              "remote_tracking_ref=origin/main",
+              "remote_tracking_freshness=observed",
+              "last_fetch=2026-10-14T04:55:02.396807+00:00",
+              "current_vs_local_tracking is not proof of true remote currentness"
+            ]
+          },
+          "lock_consistency": {
+            "value": "inconsistent",
+            "source": "governance_maturity_summary.lock_consistency",
+            "reasons": [
+              "lock_file_dirty=true",
+              "lock_adopted_commit=2a09d542900579e9527e3e08ce18b1d34e056e96",
+              "framework_head=2a09d542900579e9527e3e08ce18b1d34e056e96",
+              "no fetch was performed; this is a local lock-vs-checkout comparison",
+              "working-tree lock matches checkout HEAD but is not committed"
+            ]
+          },
+          "agents_calibration": {
+            "value": "repo_specific_minimal",
+            "source": "agents_calibration_maturity.status",
+            "reasons": [
+              "repo_local_paths_commands_or_boundaries_detected"
+            ]
+          },
+          "repo_specific_rules_present": {
+            "value": true,
+            "source": "agents_calibration_maturity.status",
+            "reasons": [
+              "repo_local_paths_commands_or_boundaries_detected"
+            ]
+          },
+          "domain_contract_present": {
+            "value": true,
+            "source": "domain_contract_loader.resolve_domain_contract",
+            "reasons": [
+              "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\contract.yaml"
+            ]
+          },
+          "validator_surface_present": {
+            "value": false,
+            "source": "domain_contract_loader.load_domain_contract.validators",
+            "reasons": [
+              "no validators declared"
+            ]
+          },
+          "memory_workflow_surface": {
+            "value": "not_checked",
+            "source": "governance_maturity_summary.memory_workflow_surface",
+            "reasons": [
+              "memory consolidation completeness is not inferred by this summary"
+            ]
+          },
+          "human_readable_adoption_summary": [
+            "[human_readable_adoption_summary]",
+            "用途：這段用人類可讀的方式說明 AI Governance 更新後，目前哪些功能已導入、哪些尚未導入或尚未驗證。",
+            "先看結論：",
+            "這份檢查做了什麼：檢查 framework、版本帳本、repo 規則、hooks、領域合約、自動檢查與記憶工作流的可見狀態。",
+            "現在能不能用：可使用已導入的治理檔案；但不能說這個 repo 已完整導入。",
+            "還差什麼：版本帳本與 checkout 已對齊，但版本帳本尚未提交；尚未宣告 repo 專屬自動檢查。",
+            "整體導入狀態：partial - 已有部分 AI Governance 功能，但仍缺少至少一個必要表面.",
+            "需要查技術細項再往下看：",
+            "AI Governance 功能導入狀態：",
+            "| 功能 | 狀態 | 這個功能是做什麼 |",
+            "| --- | --- | --- |",
+            "| 版本帳實一致性（Lock vs checkout consistency） | 已對齊，版本帳本待提交 | 比對 governance/framework.lock.json 的 adopted_commit 與本地 framework checkout HEAD；不做 fetch，也不宣稱真實遠端最新版。 |",
+            "| 框架本體（Framework checkout） | 已可用 | 提供 AI Governance 工具與規則來源；目前偵測到的導入型態是 submodule_consumer。 |",
+            "| 版本新鮮度（Framework version freshness） | 已可用 | 檢查本地 framework 是否追上本地已知 tracking ref；真正遠端最新證據由 updater 另外回報。 |",
+            "| 本 repo 規則（Repo governance instructions） | 已可用 | 讓 agent 進入這個 repo 時知道本 repo 的風險、測試與操作規則。 |",
+            "| 靜態治理檔案（Static framework files） | 已可用 | 提供不跑 runtime 也能讀到的治理文件、規則與導入狀態。 |",
+            "| runtime 治理能力（Runtime-capable governance） | 未驗證 | 代表 repo 是否具備可執行的 runtime governance；只有明確回報已可用時才算導入。 |",
+            "| 本機 commit/push 檢查（Git hooks） | 已可用 | 在本機 commit 或 push 前提示/檢查治理狀態；這不等於所有機器都已強制執行。 |",
+            "| 領域合約（Domain contract） | 已可用 | 用 contract.yaml 宣告這個 repo 自己的治理需求與驗證入口。 |",
+            "| 自動驗證層（Validator surface） | 未導入 | 列出 repo 專屬 validator，讓更新後能知道是否接上自動檢查。 |",
+            "| 記憶工作流（Memory workflow） | 未驗證 | 顯示 memory 寫入/檢查流程是否有被觀測；不代表記憶內容已完整同步。 |",
+            "技術細項：",
+            "- AI Governance framework checkout: present - 偵測到的導入型態是 submodule_consumer",
+            "- Framework version freshness: current_vs_local_tracking - 比較本地 framework 與本地已知 tracking ref；這不是遠端最新 head 的證明",
+            "- Repo governance instructions: 已可用 - AGENTS.md 包含 agent 應遵守的 repo 專屬治理規則",
+            "- Static framework files: yes - 檢查可見 framework 檔案是否足以提供靜態治理指引",
+            "- Runtime-capable governance: not_checked - 這份 summary 不證明 runtime execution 已可用",
+            "- Git hook framework root: inside_repo - 顯示本機 pre-commit/pre-push hooks 指向哪裡；hook 是本機狀態，不代表所有環境都強制執行",
+            "- Domain contract: 已可用 - contract.yaml 宣告 repo 專屬治理合約",
+            "- Validator surface: 未導入 - validator 是 contract 宣告的 repo 專屬自動檢查",
+            "- Memory workflow surface: not_checked - 這份 summary 不推論 memory 是否完整同步",
+            "尚未導入或尚未被證明：",
+            "- framework_lock_consistency: 需要後續處理，不能因此宣稱 full adoption",
+            "- validator_surface: 需要後續處理，不能因此宣稱 full adoption",
+            "白話結論：",
+            "- AI Governance 是部分導入：核心表面已存在，但這個 repo 還不能宣稱完整導入。",
+            "不能從這份 summary 宣稱：",
+            "- domain correctness",
+            "- framework lock matches the checked-out framework commit",
+            "- framework pin matches the true remote head",
+            "- full governance adoption",
+            "- hook or CI enforcement",
+            "- memory consolidation completeness",
+            "- release readiness",
+            "- runtime self-contained governance",
+            "- runtime smoke passed"
+          ],
+          "missing_surfaces": [
+            "framework_lock_consistency",
+            "validator_surface"
+          ],
+          "signal_conflicts": [],
+          "claim_ceiling": {
+            "value": "repo_specific_assisted",
+            "source": "governance_maturity_summary.derived",
+            "reasons": []
+          },
+          "cannot_claim": [
+            "domain correctness",
+            "framework lock matches the checked-out framework commit",
+            "framework pin matches the true remote head",
+            "full governance adoption",
+            "hook or CI enforcement",
+            "memory consolidation completeness",
+            "release readiness",
+            "runtime self-contained governance",
+            "runtime smoke passed"
+          ],
+          "capability_states": {
+            "topology": {
+              "state": "Detected",
+              "source": "adoption_doctor.adoption_class",
+              "reasons": [
+                "topology=submodule_consumer",
+                ".gitmodules declares initialized framework path .ai-governance-framework"
+              ]
+            },
+            "static_runtime_surface": {
+              "state": "Verified",
+              "source": "adoption_doctor.self_contained",
+              "reasons": [
+                "framework root is inside the target repo and required static runtime surfaces are present",
+                "this does not prove hooks installed, pin fresh, runtime smoke passed, all tests passed, or enforcement"
+              ]
+            },
+            "runtime_capable_static": {
+              "state": "Unproven",
+              "source": "adoption_doctor.runtime_capable",
+              "reasons": [
+                "runtime smoke is out of scope for the static report-only doctor"
+              ]
+            },
+            "readiness.contract_files_complete": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.contract_files_complete",
+              "reasons": [
+                "contract_files_complete=true"
+              ]
+            },
+            "readiness.contract_resolved": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.contract_resolved",
+              "reasons": [
+                "contract_resolved=true"
+              ]
+            },
+            "readiness.framework_release_compatible": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.framework_release_compatible",
+              "reasons": [
+                "framework_release_compatible=true"
+              ]
+            },
+            "readiness.framework_source_canonical": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.framework_source_canonical",
+              "reasons": [
+                "framework_source_canonical=true"
+              ]
+            },
+            "readiness.framework_version_current": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.framework_version_current",
+              "reasons": [
+                "framework_version_current=true"
+              ]
+            },
+            "readiness.framework_version_known": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.framework_version_known",
+              "reasons": [
+                "framework_version_known=true"
+              ]
+            },
+            "readiness.git_repo_present": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.git_repo_present",
+              "reasons": [
+                "git_repo_present=true"
+              ]
+            },
+            "readiness.gitlab_adapter_scope_consistent": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.gitlab_adapter_scope_consistent",
+              "reasons": [
+                "gitlab_adapter_scope_consistent=true"
+              ]
+            },
+            "readiness.governance_baseline_present": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.governance_baseline_present",
+              "reasons": [
+                "governance_baseline_present=true"
+              ]
+            },
+            "readiness.governance_drift_clean": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.governance_drift_clean",
+              "reasons": [
+                "governance_drift_clean=true"
+              ]
+            },
+            "readiness.hooks_ready": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.hooks_ready",
+              "reasons": [
+                "hooks_ready=true"
+              ]
+            },
+            "readiness.plan_fresh_enough": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.plan_fresh_enough",
+              "reasons": [
+                "plan_fresh_enough=true"
+              ]
+            },
+            "readiness.plan_present": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.plan_present",
+              "reasons": [
+                "plan_present=true"
+              ]
+            },
+            "readiness.project_facts_drift_free": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.project_facts_drift_free",
+              "reasons": [
+                "project_facts_drift_free=true"
+              ]
+            },
+            "readiness.project_facts_intakeable": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.project_facts_intakeable",
+              "reasons": [
+                "project_facts_intakeable=true"
+              ]
+            },
+            "readiness.project_facts_present": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.project_facts_present",
+              "reasons": [
+                "project_facts_present=true"
+              ]
+            },
+            "readiness.project_facts_schema_complete": {
+              "state": "Verified",
+              "source": "external_repo_readiness.checks.project_facts_schema_complete",
+              "reasons": [
+                "project_facts_schema_complete=true"
+              ]
+            },
+            "readiness.overall": {
+              "state": "Verified",
+              "source": "external_repo_readiness.ready",
+              "reasons": [
+                "external repo readiness returned ready=true"
+              ]
+            },
+            "hook_installation": {
+              "state": "Verified",
+              "source": "hook_install_validator.validate_hook_install",
+              "reasons": [
+                "hook_install_validator returned valid=true",
+                "warning: C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.github\\copilot-instructions.md checkpoint projection does not match C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.ai-governance-framework\\governance\\SYSTEM_PROMPT.md; expected sha256=bde31e2dbdfbb3b07421248db57e202f52cf9f20523094ea390b8913817a80bf, header sha256=0829946513494089ed95b333733572a03666060dfabd10eca36c4ab662b4888f, body sha256=0829946513494089ed95b333733572a03666060dfabd10eca36c4ab662b4888f — reinstall to update",
+                "failed_checks=copilot_checkpoint_matches_canonical"
+              ]
+            },
+            "runtime_evidence": {
+              "state": "Detected",
+              "source": "governance_maturity_summary.runtime_evidence_lookup",
+              "reasons": [
+                "runtime-smoke-like filename(s) found, but no attributable ok=true/false result matched this repo",
+                "Detected is filename-only and is not proof of runtime evidence",
+                "repo_root mismatch: C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.governance\\evidence\\runtime-smoke.json reported_repo_root=C:\\workspace\\scratch\\1ae49dba32c3\\DiceMercenaries",
+                "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.governance\\evidence\\runtime-smoke.json"
+              ]
+            },
+            "external_runtime_execution": {
+              "state": "Not Applicable",
+              "source": "governance_maturity_summary.external_runtime_execution",
+              "reasons": [
+                "external runtime execution applies only when the framework dependency and hook root are external"
+              ]
+            }
+          },
+          "owner_actions": [
+            "Run runtime smoke again to replace filename-only or unattributed runtime evidence."
+          ],
+          "next_safe_command": "python governance_tools/external_repo_smoke.py --repo \"C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\" --contract \"C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\contract.yaml\" --format human",
+          "claim_boundary": "This summary is report-only. It does not prove full governance adoption, runtime self-contained execution, hook enforcement, memory completeness, domain correctness, or release readiness."
+        },
+        "details": {
+          "repo_local_instruction": {
+            "status": "already_current",
+            "changed_files": [],
+            "errors": [],
+            "memory_workflow_router": {
+              "status": "verified",
+              "changed_files": [],
+              "errors": []
+            }
+          },
+          "hook_validator_enforcement": {
+            "status": "updated",
+            "changed_files": [
+              "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.git\\hooks\\pre-commit",
+              "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.git\\hooks\\pre-push",
+              "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.git\\hooks\\ai-governance-framework-root"
+            ],
+            "errors": []
+          },
+          "gitignore_hygiene": {
+            "status": "verified",
+            "changed_files": [],
+            "errors": []
+          },
+          "framework_lock": {
+            "status": "updated",
+            "changed_files": [
+              "governance\\framework.lock.json"
+            ],
+            "errors": []
+          },
+          "target_resolution": {
+            "target_ref": "origin/main",
+            "fetch_remote": "origin",
+            "fetch_ref": "main",
+            "target_source": "fresh_remote_fetch_head",
+            "target_fresh_upstream_verified": true,
+            "target_claim_boundary": "fresh upstream target verified; already_current/updated claims are allowed",
+            "target_head": "2a09d542900579e9527e3e08ce18b1d34e056e96"
+          }
+        },
+        "final_status": "partially_updated",
+        "final_status_scope": "full_update_completion"
+      },
+      "final_report_requirement": {
+        "status": "required",
+        "instruction": "Final AI Governance update reports must relay [human_readable_adoption_summary] table rows as a table, not a prose summary. Reporting only machine-readable fields, build/test results, adoption_doctor findings, or a framework pointer update is incomplete.",
+        "required_marker": "[human_readable_adoption_summary]",
+        "human_readable_adoption_summary": [
+          "[human_readable_adoption_summary]",
+          "用途：這段用人類可讀的方式說明 AI Governance 更新後，目前哪些功能已導入、哪些尚未導入或尚未驗證。",
+          "先看結論：",
+          "這份檢查做了什麼：檢查 framework、版本帳本、repo 規則、hooks、領域合約、自動檢查與記憶工作流的可見狀態。",
+          "現在能不能用：可使用已導入的治理檔案；但不能說這個 repo 已完整導入。",
+          "還差什麼：版本帳本與 checkout 已對齊，但版本帳本尚未提交；尚未宣告 repo 專屬自動檢查。",
+          "整體導入狀態：partial - 已有部分 AI Governance 功能，但仍缺少至少一個必要表面.",
+          "需要查技術細項再往下看：",
+          "AI Governance 功能導入狀態：",
+          "| 功能 | 狀態 | 這個功能是做什麼 |",
+          "| --- | --- | --- |",
+          "| 版本帳實一致性（Lock vs checkout consistency） | 已對齊，版本帳本待提交 | 比對 governance/framework.lock.json 的 adopted_commit 與本地 framework checkout HEAD；不做 fetch，也不宣稱真實遠端最新版。 |",
+          "| 框架本體（Framework checkout） | 已可用 | 提供 AI Governance 工具與規則來源；目前偵測到的導入型態是 submodule_consumer。 |",
+          "| 版本新鮮度（Framework version freshness） | 已可用 | 檢查本地 framework 是否追上本地已知 tracking ref；真正遠端最新證據由 updater 另外回報。 |",
+          "| 本 repo 規則（Repo governance instructions） | 已可用 | 讓 agent 進入這個 repo 時知道本 repo 的風險、測試與操作規則。 |",
+          "| 靜態治理檔案（Static framework files） | 已可用 | 提供不跑 runtime 也能讀到的治理文件、規則與導入狀態。 |",
+          "| runtime 治理能力（Runtime-capable governance） | 未驗證 | 代表 repo 是否具備可執行的 runtime governance；只有明確回報已可用時才算導入。 |",
+          "| 本機 commit/push 檢查（Git hooks） | 已可用 | 在本機 commit 或 push 前提示/檢查治理狀態；這不等於所有機器都已強制執行。 |",
+          "| 領域合約（Domain contract） | 已可用 | 用 contract.yaml 宣告這個 repo 自己的治理需求與驗證入口。 |",
+          "| 自動驗證層（Validator surface） | 未導入 | 列出 repo 專屬 validator，讓更新後能知道是否接上自動檢查。 |",
+          "| 記憶工作流（Memory workflow） | 未驗證 | 顯示 memory 寫入/檢查流程是否有被觀測；不代表記憶內容已完整同步。 |",
+          "技術細項：",
+          "- AI Governance framework checkout: present - 偵測到的導入型態是 submodule_consumer",
+          "- Framework version freshness: current_vs_local_tracking - 比較本地 framework 與本地已知 tracking ref；這不是遠端最新 head 的證明",
+          "- Repo governance instructions: 已可用 - AGENTS.md 包含 agent 應遵守的 repo 專屬治理規則",
+          "- Static framework files: yes - 檢查可見 framework 檔案是否足以提供靜態治理指引",
+          "- Runtime-capable governance: not_checked - 這份 summary 不證明 runtime execution 已可用",
+          "- Git hook framework root: inside_repo - 顯示本機 pre-commit/pre-push hooks 指向哪裡；hook 是本機狀態，不代表所有環境都強制執行",
+          "- Domain contract: 已可用 - contract.yaml 宣告 repo 專屬治理合約",
+          "- Validator surface: 未導入 - validator 是 contract 宣告的 repo 專屬自動檢查",
+          "- Memory workflow surface: not_checked - 這份 summary 不推論 memory 是否完整同步",
+          "尚未導入或尚未被證明：",
+          "- framework_lock_consistency: 需要後續處理，不能因此宣稱 full adoption",
+          "- validator_surface: 需要後續處理，不能因此宣稱 full adoption",
+          "白話結論：",
+          "- AI Governance 是部分導入：核心表面已存在，但這個 repo 還不能宣稱完整導入。",
+          "不能從這份 summary 宣稱：",
+          "- domain correctness",
+          "- framework lock matches the checked-out framework commit",
+          "- framework pin matches the true remote head",
+          "- full governance adoption",
+          "- hook or CI enforcement",
+          "- memory consolidation completeness",
+          "- release readiness",
+          "- runtime self-contained governance",
+          "- runtime smoke passed"
+        ],
+        "not_substitutes": [
+          "adoption_doctor: findings 0",
+          "governance_version_check: compatible",
+          "clean build/test results",
+          "framework pointer or lock update",
+          "machine-readable governance_maturity_summary fields only"
+        ],
+        "claim_boundary": "This is a reporting requirement only; it does not prove full governance adoption, runtime enforcement, CI/fleet enforcement, memory completeness, domain correctness, or release readiness.",
+        "required_header": "用途：這段用人類可讀的方式說明 AI Governance 更新後，目前哪些功能已導入、哪些尚未導入或尚未驗證。"
+      },
+      "final_report_table_required": {
+        "status": "required",
+        "update_report_complete": true,
+        "completion_claim_allowed": true,
+        "required_marker": "[human_readable_adoption_summary]",
+        "instruction": "Copy these [human_readable_adoption_summary] rows into the final report as a table. Do not replace them with prose or only machine-readable fields.",
+        "table_rows": [
+          "[human_readable_adoption_summary]",
+          "用途：這段用人類可讀的方式說明 AI Governance 更新後，目前哪些功能已導入、哪些尚未導入或尚未驗證。",
+          "先看結論：",
+          "這份檢查做了什麼：檢查 framework、版本帳本、repo 規則、hooks、領域合約、自動檢查與記憶工作流的可見狀態。",
+          "現在能不能用：可使用已導入的治理檔案；但不能說這個 repo 已完整導入。",
+          "還差什麼：版本帳本與 checkout 已對齊，但版本帳本尚未提交；尚未宣告 repo 專屬自動檢查。",
+          "整體導入狀態：partial - 已有部分 AI Governance 功能，但仍缺少至少一個必要表面.",
+          "需要查技術細項再往下看：",
+          "AI Governance 功能導入狀態：",
+          "| 功能 | 狀態 | 這個功能是做什麼 |",
+          "| --- | --- | --- |",
+          "| 版本帳實一致性（Lock vs checkout consistency） | 已對齊，版本帳本待提交 | 比對 governance/framework.lock.json 的 adopted_commit 與本地 framework checkout HEAD；不做 fetch，也不宣稱真實遠端最新版。 |",
+          "| 框架本體（Framework checkout） | 已可用 | 提供 AI Governance 工具與規則來源；目前偵測到的導入型態是 submodule_consumer。 |",
+          "| 版本新鮮度（Framework version freshness） | 已可用 | 檢查本地 framework 是否追上本地已知 tracking ref；真正遠端最新證據由 updater 另外回報。 |",
+          "| 本 repo 規則（Repo governance instructions） | 已可用 | 讓 agent 進入這個 repo 時知道本 repo 的風險、測試與操作規則。 |",
+          "| 靜態治理檔案（Static framework files） | 已可用 | 提供不跑 runtime 也能讀到的治理文件、規則與導入狀態。 |",
+          "| runtime 治理能力（Runtime-capable governance） | 未驗證 | 代表 repo 是否具備可執行的 runtime governance；只有明確回報已可用時才算導入。 |",
+          "| 本機 commit/push 檢查（Git hooks） | 已可用 | 在本機 commit 或 push 前提示/檢查治理狀態；這不等於所有機器都已強制執行。 |",
+          "| 領域合約（Domain contract） | 已可用 | 用 contract.yaml 宣告這個 repo 自己的治理需求與驗證入口。 |",
+          "| 自動驗證層（Validator surface） | 未導入 | 列出 repo 專屬 validator，讓更新後能知道是否接上自動檢查。 |",
+          "| 記憶工作流（Memory workflow） | 未驗證 | 顯示 memory 寫入/檢查流程是否有被觀測；不代表記憶內容已完整同步。 |",
+          "技術細項：",
+          "- AI Governance framework checkout: present - 偵測到的導入型態是 submodule_consumer",
+          "- Framework version freshness: current_vs_local_tracking - 比較本地 framework 與本地已知 tracking ref；這不是遠端最新 head 的證明",
+          "- Repo governance instructions: 已可用 - AGENTS.md 包含 agent 應遵守的 repo 專屬治理規則",
+          "- Static framework files: yes - 檢查可見 framework 檔案是否足以提供靜態治理指引",
+          "- Runtime-capable governance: not_checked - 這份 summary 不證明 runtime execution 已可用",
+          "- Git hook framework root: inside_repo - 顯示本機 pre-commit/pre-push hooks 指向哪裡；hook 是本機狀態，不代表所有環境都強制執行",
+          "- Domain contract: 已可用 - contract.yaml 宣告 repo 專屬治理合約",
+          "- Validator surface: 未導入 - validator 是 contract 宣告的 repo 專屬自動檢查",
+          "- Memory workflow surface: not_checked - 這份 summary 不推論 memory 是否完整同步",
+          "尚未導入或尚未被證明：",
+          "- framework_lock_consistency: 需要後續處理，不能因此宣稱 full adoption",
+          "- validator_surface: 需要後續處理，不能因此宣稱 full adoption",
+          "白話結論：",
+          "- AI Governance 是部分導入：核心表面已存在，但這個 repo 還不能宣稱完整導入。",
+          "不能從這份 summary 宣稱：",
+          "- domain correctness",
+          "- framework lock matches the checked-out framework commit",
+          "- framework pin matches the true remote head",
+          "- full governance adoption",
+          "- hook or CI enforcement",
+          "- memory consolidation completeness",
+          "- release readiness",
+          "- runtime self-contained governance",
+          "- runtime smoke passed"
+        ],
+        "must_relay_as": "table_rows_verbatim",
+        "claim_boundary": "Reporting aid only; table relay does not prove full governance adoption, runtime enforcement, CI/fleet enforcement, memory completeness, domain correctness, or release readiness.",
+        "row_count": 46
+      },
+      "ai_governance_update_result": {
+        "report_only": true,
+        "framework_update_status": {
+          "value": "updated",
+          "source": "updater"
+        },
+        "adoption_status": {
+          "value": "partial",
+          "source": "governance_maturity_summary.user_facing_status"
+        },
+        "lock_consistency": {
+          "value": "inconsistent",
+          "source": "governance_maturity_summary.lock_consistency"
+        },
+        "governance_maturity_summary": {
+          "value": "present"
+        },
+        "human_readable_adoption_summary": {
+          "value": "reported"
+        },
+        "final_report_requirement": {
+          "value": "present",
+          "source": "updater"
+        },
+        "update_report_complete": true,
+        "completion_claim_allowed": true,
+        "cannot_claim": [
+          "CI/fleet enforcement",
+          "domain correctness",
+          "framework lock matches the checked-out framework commit",
+          "framework pin matches the true remote head",
+          "full governance adoption",
+          "hook or CI enforcement",
+          "memory completeness",
+          "memory consolidation completeness",
+          "release readiness",
+          "runtime enforcement",
+          "runtime self-contained governance",
+          "runtime smoke passed"
+        ],
+        "evidence_refs": [
+          {
+            "field": "mode",
+            "value": "apply"
+          },
+          {
+            "field": "update_mode",
+            "value": "fast_forward"
+          },
+          {
+            "field": "target_source",
+            "value": "fresh_remote_fetch_head"
+          },
+          {
+            "field": "full_update_stage_report.final_status",
+            "value": "partially_updated"
+          }
+        ],
+        "operator_facing_report": {
+          "report_only": true,
+          "operator_decision_summary": "AI Governance update evidence is present, with missing or unverified surfaces that limit trust.",
+          "repo_update_state": "updated",
+          "adoption_status": "partial",
+          "highest_trust_claim": "Some governance surfaces are visible, but trust is limited to the specific reported evidence and missing-surface list.",
+          "blocking_or_attention_items": [
+            "lock-vs-checkout consistency is inconsistent",
+            "framework_lock_consistency",
+            "validator_surface"
+          ],
+          "evidence_refs": [
+            {
+              "field": "mode",
+              "value": "apply"
+            },
+            {
+              "field": "update_mode",
+              "value": "fast_forward"
+            },
+            {
+              "field": "target_source",
+              "value": "fresh_remote_fetch_head"
+            },
+            {
+              "field": "full_update_stage_report.final_status",
+              "value": "partially_updated"
+            }
+          ],
+          "next_action": "Reconcile framework lock versus checked-out framework HEAD before claiming the update is current.",
+          "cannot_claim": [
+            "CI/fleet enforcement",
+            "domain correctness",
+            "framework lock matches the checked-out framework commit",
+            "framework pin matches the true remote head",
+            "full governance adoption",
+            "hook or CI enforcement",
+            "memory completeness",
+            "memory consolidation completeness",
+            "release readiness",
+            "runtime enforcement",
+            "runtime self-contained governance",
+            "runtime smoke passed"
+          ],
+          "claim_boundary": "Operator-facing projection only; this does not prove governance quality, domain correctness, runtime enforcement, or agent compliance."
+        },
+        "operation_execution": {
+          "status": "passed",
+          "mode": "apply",
+          "framework_update_applied": true,
+          "meaning": "apply completed and updated the framework checkout"
+        }
+      },
+      "target_source": "fresh_remote_fetch_head",
+      "update_receipt": {
+        "status": "written",
+        "path": "governance/.update-receipt.json",
+        "staged": false,
+        "claim_boundary": [
+          "receipt is review evidence, not proof",
+          "no fetch truth is implied unless explicitly recorded",
+          "consumer repo adoption is not proven complete"
+        ],
+        "not_claimed": [
+          "full governance adoption",
+          "hook/CI enforcement",
+          "memory completeness",
+          "domain correctness",
+          "release readiness"
+        ],
+        "receipt": {
+          "receipt_version": "0.1",
+          "receipt_type": "ai_governance_update",
+          "tool": "external_governance_submodule_updater",
+          "tool_mode": "apply",
+          "repo_root": "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3",
+          "framework_root": "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.ai-governance-framework",
+          "framework_before": "b74bbde22727391dadfdc017cb1bad9c20169ad6",
+          "framework_after": "2a09d542900579e9527e3e08ce18b1d34e056e96",
+          "lock_adopted_commit": "2a09d542900579e9527e3e08ce18b1d34e056e96",
+          "lock_matches_checkout": true,
+          "update_status": "updated",
+          "generated_at_utc": "2026-10-14T04:55:04Z",
+          "claim_boundary": [
+            "receipt is review evidence, not proof",
+            "no fetch truth is implied unless explicitly recorded",
+            "consumer repo adoption is not proven complete"
+          ],
+          "not_claimed": [
+            "full governance adoption",
+            "hook/CI enforcement",
+            "memory completeness",
+            "domain correctness",
+            "release readiness"
+          ],
+          "remote_evidence": {
+            "target_ref": "origin/main",
+            "fetch_remote": "origin",
+            "fetch_ref": "main",
+            "target_source": "fresh_remote_fetch_head",
+            "target_fresh_upstream_verified": true,
+            "target_claim_boundary": "fresh upstream target verified; already_current/updated claims are allowed",
+            "target_head": "2a09d542900579e9527e3e08ce18b1d34e056e96"
+          }
+        }
+      }
+    }
+  },
+  "final_report_requirement": {
+    "status": "required",
+    "instruction": "Final AI Governance update reports must relay [human_readable_adoption_summary] table rows as a table, not a prose summary. Reporting only machine-readable fields, build/test results, adoption_doctor findings, or a framework pointer update is incomplete.",
+    "required_marker": "[human_readable_adoption_summary]",
+    "human_readable_adoption_summary": [
+      "[human_readable_adoption_summary]",
+      "用途：這段用人類可讀的方式說明 AI Governance 更新後，目前哪些功能已導入、哪些尚未導入或尚未驗證。",
+      "先看結論：",
+      "這份檢查做了什麼：檢查 framework、版本帳本、repo 規則、hooks、領域合約、自動檢查與記憶工作流的可見狀態。",
+      "現在能不能用：可使用已導入的治理檔案；但不能說這個 repo 已完整導入。",
+      "還差什麼：版本帳本與 checkout 已對齊，但版本帳本尚未提交；尚未宣告 repo 專屬自動檢查。",
+      "整體導入狀態：partial - 已有部分 AI Governance 功能，但仍缺少至少一個必要表面.",
+      "需要查技術細項再往下看：",
+      "AI Governance 功能導入狀態：",
+      "| 功能 | 狀態 | 這個功能是做什麼 |",
+      "| --- | --- | --- |",
+      "| 版本帳實一致性（Lock vs checkout consistency） | 已對齊，版本帳本待提交 | 比對 governance/framework.lock.json 的 adopted_commit 與本地 framework checkout HEAD；不做 fetch，也不宣稱真實遠端最新版。 |",
+      "| 框架本體（Framework checkout） | 已可用 | 提供 AI Governance 工具與規則來源；目前偵測到的導入型態是 submodule_consumer。 |",
+      "| 版本新鮮度（Framework version freshness） | 已可用 | 檢查本地 framework 是否追上本地已知 tracking ref；真正遠端最新證據由 updater 另外回報。 |",
+      "| 本 repo 規則（Repo governance instructions） | 已可用 | 讓 agent 進入這個 repo 時知道本 repo 的風險、測試與操作規則。 |",
+      "| 靜態治理檔案（Static framework files） | 已可用 | 提供不跑 runtime 也能讀到的治理文件、規則與導入狀態。 |",
+      "| runtime 治理能力（Runtime-capable governance） | 未驗證 | 代表 repo 是否具備可執行的 runtime governance；只有明確回報已可用時才算導入。 |",
+      "| 本機 commit/push 檢查（Git hooks） | 已可用 | 在本機 commit 或 push 前提示/檢查治理狀態；這不等於所有機器都已強制執行。 |",
+      "| 領域合約（Domain contract） | 已可用 | 用 contract.yaml 宣告這個 repo 自己的治理需求與驗證入口。 |",
+      "| 自動驗證層（Validator surface） | 未導入 | 列出 repo 專屬 validator，讓更新後能知道是否接上自動檢查。 |",
+      "| 記憶工作流（Memory workflow） | 未驗證 | 顯示 memory 寫入/檢查流程是否有被觀測；不代表記憶內容已完整同步。 |",
+      "技術細項：",
+      "- AI Governance framework checkout: present - 偵測到的導入型態是 submodule_consumer",
+      "- Framework version freshness: current_vs_local_tracking - 比較本地 framework 與本地已知 tracking ref；這不是遠端最新 head 的證明",
+      "- Repo governance instructions: 已可用 - AGENTS.md 包含 agent 應遵守的 repo 專屬治理規則",
+      "- Static framework files: yes - 檢查可見 framework 檔案是否足以提供靜態治理指引",
+      "- Runtime-capable governance: not_checked - 這份 summary 不證明 runtime execution 已可用",
+      "- Git hook framework root: inside_repo - 顯示本機 pre-commit/pre-push hooks 指向哪裡；hook 是本機狀態，不代表所有環境都強制執行",
+      "- Domain contract: 已可用 - contract.yaml 宣告 repo 專屬治理合約",
+      "- Validator surface: 未導入 - validator 是 contract 宣告的 repo 專屬自動檢查",
+      "- Memory workflow surface: not_checked - 這份 summary 不推論 memory 是否完整同步",
+      "尚未導入或尚未被證明：",
+      "- framework_lock_consistency: 需要後續處理，不能因此宣稱 full adoption",
+      "- validator_surface: 需要後續處理，不能因此宣稱 full adoption",
+      "白話結論：",
+      "- AI Governance 是部分導入：核心表面已存在，但這個 repo 還不能宣稱完整導入。",
+      "不能從這份 summary 宣稱：",
+      "- domain correctness",
+      "- framework lock matches the checked-out framework commit",
+      "- framework pin matches the true remote head",
+      "- full governance adoption",
+      "- hook or CI enforcement",
+      "- memory consolidation completeness",
+      "- release readiness",
+      "- runtime self-contained governance",
+      "- runtime smoke passed"
+    ],
+    "not_substitutes": [
+      "adoption_doctor: findings 0",
+      "governance_version_check: compatible",
+      "clean build/test results",
+      "framework pointer or lock update",
+      "machine-readable governance_maturity_summary fields only"
+    ],
+    "claim_boundary": "This is a reporting requirement only; it does not prove full governance adoption, runtime enforcement, CI/fleet enforcement, memory completeness, domain correctness, or release readiness.",
+    "required_header": "用途：這段用人類可讀的方式說明 AI Governance 更新後，目前哪些功能已導入、哪些尚未導入或尚未驗證。"
+  },
+  "final_report_table_required": {
+    "status": "required",
+    "update_report_complete": true,
+    "completion_claim_allowed": true,
+    "required_marker": "[human_readable_adoption_summary]",
+    "instruction": "Copy these [human_readable_adoption_summary] rows into the final report as a table. Do not replace them with prose or only machine-readable fields.",
+    "table_rows": [
+      "[human_readable_adoption_summary]",
+      "用途：這段用人類可讀的方式說明 AI Governance 更新後，目前哪些功能已導入、哪些尚未導入或尚未驗證。",
+      "先看結論：",
+      "這份檢查做了什麼：檢查 framework、版本帳本、repo 規則、hooks、領域合約、自動檢查與記憶工作流的可見狀態。",
+      "現在能不能用：可使用已導入的治理檔案；但不能說這個 repo 已完整導入。",
+      "還差什麼：版本帳本與 checkout 已對齊，但版本帳本尚未提交；尚未宣告 repo 專屬自動檢查。",
+      "整體導入狀態：partial - 已有部分 AI Governance 功能，但仍缺少至少一個必要表面.",
+      "需要查技術細項再往下看：",
+      "AI Governance 功能導入狀態：",
+      "| 功能 | 狀態 | 這個功能是做什麼 |",
+      "| --- | --- | --- |",
+      "| 版本帳實一致性（Lock vs checkout consistency） | 已對齊，版本帳本待提交 | 比對 governance/framework.lock.json 的 adopted_commit 與本地 framework checkout HEAD；不做 fetch，也不宣稱真實遠端最新版。 |",
+      "| 框架本體（Framework checkout） | 已可用 | 提供 AI Governance 工具與規則來源；目前偵測到的導入型態是 submodule_consumer。 |",
+      "| 版本新鮮度（Framework version freshness） | 已可用 | 檢查本地 framework 是否追上本地已知 tracking ref；真正遠端最新證據由 updater 另外回報。 |",
+      "| 本 repo 規則（Repo governance instructions） | 已可用 | 讓 agent 進入這個 repo 時知道本 repo 的風險、測試與操作規則。 |",
+      "| 靜態治理檔案（Static framework files） | 已可用 | 提供不跑 runtime 也能讀到的治理文件、規則與導入狀態。 |",
+      "| runtime 治理能力（Runtime-capable governance） | 未驗證 | 代表 repo 是否具備可執行的 runtime governance；只有明確回報已可用時才算導入。 |",
+      "| 本機 commit/push 檢查（Git hooks） | 已可用 | 在本機 commit 或 push 前提示/檢查治理狀態；這不等於所有機器都已強制執行。 |",
+      "| 領域合約（Domain contract） | 已可用 | 用 contract.yaml 宣告這個 repo 自己的治理需求與驗證入口。 |",
+      "| 自動驗證層（Validator surface） | 未導入 | 列出 repo 專屬 validator，讓更新後能知道是否接上自動檢查。 |",
+      "| 記憶工作流（Memory workflow） | 未驗證 | 顯示 memory 寫入/檢查流程是否有被觀測；不代表記憶內容已完整同步。 |",
+      "技術細項：",
+      "- AI Governance framework checkout: present - 偵測到的導入型態是 submodule_consumer",
+      "- Framework version freshness: current_vs_local_tracking - 比較本地 framework 與本地已知 tracking ref；這不是遠端最新 head 的證明",
+      "- Repo governance instructions: 已可用 - AGENTS.md 包含 agent 應遵守的 repo 專屬治理規則",
+      "- Static framework files: yes - 檢查可見 framework 檔案是否足以提供靜態治理指引",
+      "- Runtime-capable governance: not_checked - 這份 summary 不證明 runtime execution 已可用",
+      "- Git hook framework root: inside_repo - 顯示本機 pre-commit/pre-push hooks 指向哪裡；hook 是本機狀態，不代表所有環境都強制執行",
+      "- Domain contract: 已可用 - contract.yaml 宣告 repo 專屬治理合約",
+      "- Validator surface: 未導入 - validator 是 contract 宣告的 repo 專屬自動檢查",
+      "- Memory workflow surface: not_checked - 這份 summary 不推論 memory 是否完整同步",
+      "尚未導入或尚未被證明：",
+      "- framework_lock_consistency: 需要後續處理，不能因此宣稱 full adoption",
+      "- validator_surface: 需要後續處理，不能因此宣稱 full adoption",
+      "白話結論：",
+      "- AI Governance 是部分導入：核心表面已存在，但這個 repo 還不能宣稱完整導入。",
+      "不能從這份 summary 宣稱：",
+      "- domain correctness",
+      "- framework lock matches the checked-out framework commit",
+      "- framework pin matches the true remote head",
+      "- full governance adoption",
+      "- hook or CI enforcement",
+      "- memory consolidation completeness",
+      "- release readiness",
+      "- runtime self-contained governance",
+      "- runtime smoke passed"
+    ],
+    "must_relay_as": "table_rows_verbatim",
+    "claim_boundary": "Reporting aid only; table relay does not prove full governance adoption, runtime enforcement, CI/fleet enforcement, memory completeness, domain correctness, or release readiness.",
+    "row_count": 46
+  },
+  "ai_governance_update_result": {
+    "report_only": true,
+    "framework_update_status": {
+      "value": "updated",
+      "source": "f7_full_update"
+    },
+    "adoption_status": {
+      "value": "partial",
+      "source": "governance_maturity_summary.user_facing_status"
+    },
+    "lock_consistency": {
+      "value": "inconsistent",
+      "source": "governance_maturity_summary.lock_consistency"
+    },
+    "governance_maturity_summary": {
+      "value": "present"
+    },
+    "human_readable_adoption_summary": {
+      "value": "reported"
+    },
+    "final_report_requirement": {
+      "value": "present",
+      "source": "f7_full_update"
+    },
+    "update_report_complete": true,
+    "completion_claim_allowed": true,
+    "cannot_claim": [
+      "CI/fleet enforcement",
+      "domain correctness",
+      "framework lock matches the checked-out framework commit",
+      "framework pin matches the true remote head",
+      "full governance adoption",
+      "hook or CI enforcement",
+      "memory completeness",
+      "memory consolidation completeness",
+      "release readiness",
+      "runtime enforcement",
+      "runtime self-contained governance",
+      "runtime smoke passed"
+    ],
+    "evidence_refs": [
+      {
+        "field": "mode",
+        "value": "apply"
+      },
+      {
+        "field": "repo_role",
+        "value": "submodule_consumer"
+      },
+      {
+        "field": "f7_final_status",
+        "value": "partially_updated"
+      }
+    ],
+    "operator_facing_report": {
+      "report_only": true,
+      "operator_decision_summary": "AI Governance update evidence is present, with missing or unverified surfaces that limit trust.",
+      "repo_update_state": "updated",
+      "adoption_status": "partial",
+      "highest_trust_claim": "Some governance surfaces are visible, but trust is limited to the specific reported evidence and missing-surface list.",
+      "blocking_or_attention_items": [
+        "lock-vs-checkout consistency is inconsistent",
+        "framework_lock_consistency",
+        "validator_surface"
+      ],
+      "evidence_refs": [
+        {
+          "field": "mode",
+          "value": "apply"
+        },
+        {
+          "field": "repo_role",
+          "value": "submodule_consumer"
+        },
+        {
+          "field": "f7_final_status",
+          "value": "partially_updated"
+        }
+      ],
+      "next_action": "Reconcile framework lock versus checked-out framework HEAD before claiming the update is current.",
+      "cannot_claim": [
+        "CI/fleet enforcement",
+        "domain correctness",
+        "framework lock matches the checked-out framework commit",
+        "framework pin matches the true remote head",
+        "full governance adoption",
+        "hook or CI enforcement",
+        "memory completeness",
+        "memory consolidation completeness",
+        "release readiness",
+        "runtime enforcement",
+        "runtime self-contained governance",
+        "runtime smoke passed"
+      ],
+      "claim_boundary": "Operator-facing projection only; this does not prove governance quality, domain correctness, runtime enforcement, or agent compliance."
+    }
+  },
+  "tool_provenance": {
+    "executing_root": "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.ai-governance-framework",
+    "executing_revision": "b74bbde22727391dadfdc017cb1bad9c20169ad6",
+    "executing_worktree_dirty": false,
+    "sampled": "before_any_mutation",
+    "claim_boundary": "identifies the checkout that produced this report, sampled before any mutation; it is not compared against any required revision"
+  },
+  "update_receipt": {
+    "status": "written",
+    "path": "governance/.update-receipt.json",
+    "staged": false,
+    "claim_boundary": [
+      "receipt is review evidence, not proof",
+      "no fetch truth is implied unless explicitly recorded",
+      "consumer repo adoption is not proven complete"
+    ],
+    "not_claimed": [
+      "full governance adoption",
+      "hook/CI enforcement",
+      "memory completeness",
+      "domain correctness",
+      "release readiness"
+    ],
+    "receipt": {
+      "receipt_version": "0.1",
+      "receipt_type": "ai_governance_update",
+      "tool": "external_governance_submodule_updater",
+      "tool_mode": "apply",
+      "repo_root": "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3",
+      "framework_root": "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm-s3\\.ai-governance-framework",
+      "framework_before": "b74bbde22727391dadfdc017cb1bad9c20169ad6",
+      "framework_after": "2a09d542900579e9527e3e08ce18b1d34e056e96",
+      "lock_adopted_commit": "2a09d542900579e9527e3e08ce18b1d34e056e96",
+      "lock_matches_checkout": true,
+      "update_status": "updated",
+      "generated_at_utc": "2026-10-14T04:55:04Z",
+      "claim_boundary": [
+        "receipt is review evidence, not proof",
+        "no fetch truth is implied unless explicitly recorded",
+        "consumer repo adoption is not proven complete"
+      ],
+      "not_claimed": [
+        "full governance adoption",
+        "hook/CI enforcement",
+        "memory completeness",
+        "domain correctness",
+        "release readiness"
+      ],
+      "remote_evidence": {
+        "target_ref": "origin/main",
+        "fetch_remote": "origin",
+        "fetch_ref": "main",
+        "target_source": "fresh_remote_fetch_head",
+        "target_fresh_upstream_verified": true,
+        "target_claim_boundary": "fresh upstream target verified; already_current/updated claims are allowed",
+        "target_head": "2a09d542900579e9527e3e08ce18b1d34e056e96"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+[memory_record] Written: C:\Users\reiko\.codex\worktrees\gdscript-support\dm-s3\memory\2026-10-14.md (surface identity=f35a78dbb774e21abfcc119ead463a9852da2c63a7292c4bc34ab94215303aef)
+[memory_record] Written: C:\Users\reiko\.codex\worktrees\gdscript-support\dm-s3\memory\01_active_task.md (surface identity=f35a78dbb774e21abfcc119ead463a9852da2c63a7292c4bc34ab94215303aef)
+- memory_type: session-derived
+  record_format_version: 1.0
+  writer: governance_tools.memory_record
+  what_changed: Owner confirmed S3 local clean checkout, F7 adoption and native acceptance only. Clean isolated consumer checkout fromc90de451 uses framework2a09d542900579e9527e3e08ce18b1d34e056e96 verified via fresh upstream F7 fetch. Pin/lock and managed hooks/instructions updated locally; F7 final_status partially_updated because lock is uncommitted. Bound existing DM00 checker as dm-native-check via existing validator interface, synchronized two stale local SYSTEM_PROMPT language lines, and preserved proposed risk classification. Default pinned pre/post path passed without framework override;8 interface tests passed. Real disposable healthy/missing-engine/bad-script/bad-scene cases matched expected verdicts and game source preserved. Original S3/S4 candidate unchanged; no CI workflow edits, commit, push, consumer merge, S4 publication or closeout. S3 documentation and PLAN reflect local/uncommitted evidence; full adoption, memory lifecycle, hosted Linux/Windows, gameplay and owner acceptance remain unclaimed.
+  commit: uncommitted
+  commit_hash: uncommitted
+  session_id: 2026-10-14-dm-s3-local
+  memory_binding: unbound
+  test_evidence: Current observations under memory/evidence/s3-adoption: f7-dry-run.json/f7-apply.json; runtime-initial.json ok=true/default override=false; native-cases-initial.json4 matched/source preserved. Interface8 passes are stub evidence, native4 cases are real engine evidence. Formal memory evidence qualification and committed-candidate validation NOT CLAIMED.
+  next_step: Present S3 local candidate and partial adoption report. Stop within local-only DONE; S3 delivery and S4 hosted CI require their separate bounded authorization.
+  plan_reconciliation: updated
+  record_identity: f35a78dbb774e21abfcc119ead463a9852da2c63a7292c4bc34ab94215303aef
+
