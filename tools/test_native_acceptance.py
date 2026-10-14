@@ -16,7 +16,9 @@ CANDIDATE_FILES = (
     'governance/validators/native_project.py', 'tests/governance/test_native_validator.py',
     'governance/rules/dm-native-check/acceptance.md',
 )
-GAME_FILES = ('project.godot', 'scenes/ui/bootstrap.tscn', 'tests/integration/test_bootstrap.gd')
+GAME_FILES = ('project.godot', 'scenes/battle/physics_lab.tscn',
+              'tests/integration/test_physics_lab.gd',
+              'scenes/ui/bootstrap.tscn', 'tests/integration/test_bootstrap.gd')
 
 
 def main() -> int:
@@ -26,23 +28,32 @@ def main() -> int:
     parser.add_argument('--output', type=Path, default=ROOT / 'memory/evidence/native-adoption/native-cases.json')
     args = parser.parse_args()
     before = {name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() for name in GAME_FILES}
+    dm01 = 'res://scenes/battle/physics_lab.tscn' in (ROOT / 'project.godot').read_text(encoding='utf-8')
+    script_path = 'tests/integration/test_physics_lab.gd' if dm01 else 'tests/integration/test_bootstrap.gd'
+    scene_path = 'scenes/battle/physics_lab.tscn' if dm01 else 'scenes/ui/bootstrap.tscn'
     report = {'ok': False, 'cases': [], 'not_claimed': ['gameplay', 'hosted CI', 'pinned adoption']}
     with tempfile.TemporaryDirectory(prefix='dm-native-cases-') as directory:
-        for case in ('healthy', 'missing_engine', 'bad_script', 'bad_scene'):
+        for case in ('healthy', 'missing_engine', 'bad_script', 'bad_scene', 'dm00_healthy'):
             target = Path(directory) / case
             subprocess.run(['git', '-c', 'core.longpaths=true', 'clone', '--quiet', '--shared',
                             '--no-hardlinks', str(ROOT), str(target)], check=True,
                            capture_output=True, text=True)
-            for name in CANDIDATE_FILES:
+            source_files = [*GAME_FILES, 'tools/check_project.py', 'tests/unit/test_shot_rules.gd',
+                            *[p.relative_to(ROOT).as_posix() for p in (ROOT / 'scripts').rglob('*') if p.is_file()]]
+            for name in (*CANDIDATE_FILES, *source_files):
                 destination = target / name
                 destination.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(ROOT / name, destination)
             if case == 'bad_script':
-                (target / 'tests/integration/test_bootstrap.gd').write_text(
+                (target / script_path).write_text(
                     'extends SceneTree\nfunc _initialize(:\n', encoding='utf-8')
             elif case == 'bad_scene':
-                (target / 'scenes/ui/bootstrap.tscn').write_text(
+                (target / scene_path).write_text(
                     '[gd_scene format=3]\n[node name="Broken" type="Node"]\n', encoding='utf-8')
+            elif case == 'dm00_healthy':
+                project = target / 'project.godot'
+                project.write_text(project.read_text(encoding='utf-8').replace(
+                    'res://scenes/battle/physics_lab.tscn', 'res://scenes/ui/bootstrap.tscn'), encoding='utf-8')
             output = target / 'memory/evidence/native-adoption/runtime.json'
             engine = str(target / 'engine-does-not-exist') if case == 'missing_engine' else args.godot
             command = [sys.executable, str(target / 'tools/check_governance.py'),
@@ -52,7 +63,7 @@ def main() -> int:
                                     encoding='utf-8', errors='replace', timeout=420)
             runtime = json.loads(output.read_text(encoding='utf-8'))
             validators = runtime.get('post_task', {}).get('domain_validator_results', [])
-            expected_ok = case == 'healthy'
+            expected_ok = case in ('healthy', 'dm00_healthy')
             matched = (runtime.get('pre_task', {}).get('ok') is True
                        and len(validators) == 1
                        and validators[0].get('ok') is expected_ok
