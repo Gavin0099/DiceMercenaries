@@ -1,7 +1,7 @@
 name: DM-00 native checks
 on:
   push:
-    branches: ['feat/dm-00']
+    branches: [main, 'feat/dm-00', 'codex/dm-s4-native-ci']
   pull_request:
   workflow_dispatch:
 permissions:
@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -44,14 +45,22 @@ jobs:
               binary.chmod(0o755)
           with open(os.environ['GITHUB_ENV'], 'a', encoding='utf-8') as env:
               env.write('DM_GODOT=' + str(binary) + '\n')
-      - name: Native import, scene contract and startup
+      - name: Pre-task, bound native validator and post-task acceptance
         shell: python
         run: |
           import os, subprocess
-          output = os.path.join(os.environ['RUNNER_TEMP'], 'dm00-native-check.json')
-          subprocess.run(['python', 'tools/check_project.py', '--godot', os.environ['DM_GODOT'], '--output', output], check=True)
+          output = os.path.join(os.environ['RUNNER_TEMP'], 'dm-native-governance.json')
+          subprocess.run(['python', 'tools/check_governance.py', '--godot', os.environ['DM_GODOT'], '--output', output], check=True)
+      - name: Real engine failure-path replay in disposable projects
+        shell: python
+        run: |
+          import os, subprocess
+          output = os.path.join(os.environ['RUNNER_TEMP'], 'dm-native-cases.json')
+          subprocess.run(['python', 'tools/test_native_acceptance.py', '--godot', os.environ['DM_GODOT'], '--output', output], check=True)
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: dm00-${{ matrix.os }}-${{ github.sha }}
-          path: ${{ runner.temp }}/dm00-native-check.json
+          path: |
+            ${{ runner.temp }}/dm-native-governance.json
+            ${{ runner.temp }}/dm-native-cases.json
