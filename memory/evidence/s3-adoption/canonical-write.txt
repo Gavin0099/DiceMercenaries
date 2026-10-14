@@ -12,4 +12,3 @@
   next_step: Present S3 local candidate and partial adoption report. Stop within local-only DONE; S3 delivery and S4 hosted CI require their separate bounded authorization.
   plan_reconciliation: updated
   record_identity: f35a78dbb774e21abfcc119ead463a9852da2c63a7292c4bc34ab94215303aef
-
