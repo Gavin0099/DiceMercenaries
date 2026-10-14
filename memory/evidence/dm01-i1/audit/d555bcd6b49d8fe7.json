@@ -1,0 +1,38 @@
+{
+  "trace_id": "d555bcd6b49d8fe7",
+  "written_at": "2026-10-14T09:23:42.297865+00:00",
+  "task_level": "L2",
+  "verdict": "warn",
+  "full_trace": {},
+  "onboarding_narrative": "",
+  "reviewer_notes": "",
+  "reasoning_fragments": [
+    {
+      "rule_id": "UNKNOWN",
+      "violation_type": "generic_violation",
+      "policy_refs": [],
+      "severity": "medium",
+      "prose": "Assumption check missing before modification planning: missing=assumptions, alternative_root_causes, evidence, reframe_or_validation_step; why=the premise, alternatives, evidence, or validation step i..."
+    },
+    {
+      "rule_id": "UNKNOWN",
+      "violation_type": "generic_violation",
+      "policy_refs": [],
+      "severity": "medium",
+      "prose": "Decision policy advisory: assumption evidence missing: missing=direct evidence that tests the stated assumption; why=the decision remains uncertain even if the assumption is plausible; next=collect a ..."
+    },
+    {
+      "rule_id": "UNKNOWN",
+      "violation_type": "generic_violation",
+      "policy_refs": [],
+      "severity": "medium",
+      "prose": "Decision policy advisory: proceeding under assumption: missing=confirmed evidence for the premise; why=this is a provisional action, not proof that the change is correct; next=keep the change reversib..."
+    }
+  ],
+  "policy_refs": [],
+  "decision_path": [
+    "risk=medium",
+    "oversight=review-required",
+    "rules=common,gdscript,dm-native-check"
+  ]
+}

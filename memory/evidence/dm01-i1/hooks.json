@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "repo_root": "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm01-i1",
+  "framework_root": "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm01-i1\\.ai-governance-framework",
+  "installed_files": [
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm01-i1\\governance\\external-tree-inventory-guard.json",
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm01-i1\\.git\\hooks\\pre-commit",
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm01-i1\\.git\\hooks\\pre-push",
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm01-i1\\.git\\hooks\\ai-governance-framework-root"
+  ],
+  "changed_files": [
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm01-i1\\.git\\hooks\\pre-commit",
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm01-i1\\.git\\hooks\\pre-push",
+    "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm01-i1\\.git\\hooks\\ai-governance-framework-root"
+  ],
+  "backups": [],
+  "errors": [],
+  "copilot_instructions_mode": null
+}

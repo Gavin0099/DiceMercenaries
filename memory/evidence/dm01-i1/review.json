@@ -1,0 +1,32 @@
+{
+  "mode": "REVIEW",
+  "mode_source": "review_completed",
+  "session_id": "2026-10-14-dm01-i1",
+  "task_authority": "Owner confirmed integration of existing DM-01 onto main a1068a8 acceptance/CI and delivery of a reviewable Draft PR. Direct automatic checks/CI authorized; native GUI, merge and release excluded.",
+  "scope": "Existing game bytes from PR3 92f4f418 plus consumer-native checker/validator, focused fixtures, native workflow and related documentation. Main framework pin/lock/contract/governance workflow preserved.",
+  "done": "Local implementation and focused precommit review completed; commit, Draft delivery and exact-head hosted CI remain pending at this checkpoint.",
+  "verdict": "APPROVED",
+  "reviewer": "author process; independent review not claimed",
+  "conclusion": "No blocking finding for the bounded integration Draft handoff.",
+  "claim_ceiling": "Local engineering integration evidence only; post-commit source/head binding and hosted CI are separate delivery checks.",
+  "inputs_checked": ["docs/slices/DM-01-I1.md", "governance/ARCHITECTURE.md", ".ai-governance-framework/governance/REVIEW_CRITERIA.md", "memory/04_review_log.md", "memory/03_knowledge_base.md", "changed checker/validator/fixtures/native workflow", "existing game source reviewed during DM-01-R1 and unchanged here"],
+  "audit": {
+    "architecture": "Original pure ShotRules and scene/input adapters preserved; no framework or cross-project dependency introduced",
+    "native_safety": "No ABI/native interop change; actual pinned Godot used headlessly",
+    "test_integrity": "11 independent validator interface test methods; actual engine rules16 and scene24 assertions; five real healthy/negative/DM00 cases matched",
+    "previous_passing_signal": "DM-00 native acceptance still passes in disposable real-engine replay",
+    "source_identity": "19 game/config/test files match original PR3 bytes; framework and contract pins unchanged",
+    "ci": "Main checks, full history, checksum, dependency pin and memory workflow retained; existing Windows development packaging attached",
+    "thread_safety": "N/A for integration wiring; game implementation unchanged",
+    "scope_hygiene": "Isolated branch from a1068a8; old GUI checkout and unrelated dirty work left untouched"
+  },
+  "blocking_findings": [],
+  "carried_forward": [
+    {"severity":"WARNING","location":"docs/slices/DM-01-I1.md:9","attribution":"pre-existing","current_decision_impact":"no for Draft integration","status":"carried-forward","disposition":"Remaining GUI acceptance explicitly skipped; no full play/fun/G1 claim"},
+    {"severity":"WARNING","location":"contract.yaml:7","attribution":"pre-existing","current_decision_impact":"no for authorized integration Draft","status":"carried-forward","disposition":"Domain risk remains proposed; full adoption/lifecycle/memory evidence qualification not asserted"}
+  ],
+  "evidence_refs": ["memory/evidence/dm01-i1/original-candidate.json", "memory/evidence/dm01-i1/game-preservation.json", "memory/evidence/dm01-i1/precommit-runtime.json", "memory/evidence/dm01-i1/native-cases-precommit.json", "memory/evidence/dm01-i1/workflow-syntax.json", "memory/evidence/dm01-i1/memory-preflight.json", "memory/evidence/dm01-i1/hooks.json"],
+  "not_claimed": ["Independent approval", "Hosted CI at this checkpoint", "Full GUI/play acceptance", "G1 or DM02", "Formal evidence/memory lifecycle qualification", "Full AI Governance adoption", "Merge/release"],
+  "risk": "L2 consumer evidence routing change, justified by observed DM00-vs-DM01 mismatch; fail-closed sequence/hash/sentinel checks preserved and DM00 regression replay passed",
+  "next_action": "Commit the integration, bind fresh runtime evidence and canonical memory to that implementation commit, push and open a Draft PR, then verify exact latest-head CI."
+}

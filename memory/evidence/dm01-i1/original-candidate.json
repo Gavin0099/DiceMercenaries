@@ -1,0 +1,30 @@
+{
+  "source_head": "92f4f4183310acbd862ac34790e5b26dcc944643",
+  "integration_base": "a1068a8971bfe658bd5819651f19780c902ad67a",
+  "sha256": {
+    "README.md": "1c17152aeee5f0b5329915fbcf1a0550f29ca6aac4276ecadcc89b232634de1d",
+    "docs/slices/DM-01.md": "da8baaba63aae12d01ffff0cf0ce99f0c19268d2eb9a3a46b81c5f1cb056ec43",
+    "project.godot": "dfa6c3c177746b777a24b830523164c1a950e594aa1b63896c952d8649e4a0d4",
+    "scenes/battle/physics_lab.tscn": "6a3a0d1dd5fa6338b8a692e2fb2ec9b18fe4d6766d09f5717ad38f26e54e6b34",
+    "scripts/combat/player_body.gd": "e10070790025d545a5c957b2364214571aec3f8ccf3182417ce84607eff1001f",
+    "scripts/combat/player_body.gd.uid": "fc5620d5db96d521686caf4cb15c6120c9c21bc4b5dc9359134b6a9ab8f0b474",
+    "scripts/combat/projectile_body.gd": "1bfd4bb0e7d75f3f097d5aad7c46e54b890fdf89d5738e25d400b2ef0b178e7b",
+    "scripts/combat/projectile_body.gd.uid": "bb275ca88e9ba6340d2c54feae2e2bec746f6391f716256859d9125768628868",
+    "scripts/combat/target_body.gd": "1548274e9f72ecb3c7940924973a794d1e78956400173de91f5694a42d2f0648",
+    "scripts/combat/target_body.gd.uid": "027b14c397378e1e8984067f642c09b151cbc6718ae1a76c11c27448e54a63f2",
+    "scripts/domain/shot_rules.gd": "96b23d06b72ef13a1d93213db9a9b6a78f043d0dd7bf25643c1a7e36d02c9436",
+    "scripts/domain/shot_rules.gd.uid": "8db405fefa5e49da5e8a399b1f741814f22ea867e08016537a858af0172d77b8",
+    "scripts/presentation/physics_lab.gd": "a23f039d318f18a688cdbb7df81d5ccff985253ecf2b9ac8056cfdd85b8e14b4",
+    "scripts/presentation/physics_lab.gd.uid": "222455726b5ccb89bbed784ccc6f4142b2c92f943e95b56b2d6ce67fed11f0c7",
+    "tests/integration/test_physics_lab.gd": "33492479e1eaaf3eac7114ca21d24db2729c0b21877fb6ba5df5988eb0364349",
+    "tests/integration/test_physics_lab.gd.uid": "1087f7302f2188d3715648cbf991e670e7d82d00425d203e6ac28ea27661cd16",
+    "tests/manual/DM-01.md": "94d8cbe4e0dad6ed4b3422bd7098c293825f6310a55fa2693c23e98a5e7e2693",
+    "tests/manual/replay_lab.gd": "67108b51b44d9208f129e040680c6cd439d601a6af66c46c7aa242169aa00884",
+    "tests/manual/replay_lab.gd.uid": "a0d12f3ade47bd2e0057ade499470dc121a597a3ed298154ada00ddf5a7f0ba7",
+    "tests/unit/test_shot_rules.gd": "2bc1bbd3f15cecaa88d91595d2176db34bfd38bfe46e522f06df65e1a58c5ebb",
+    "tests/unit/test_shot_rules.gd.uid": "e9bd141d3db5f587250f781e1894b408bf88614596bd1ae3580b91a1641bf534",
+    "tools/check_project.py": "f7e91b31318592230262101d7410cbf3c5440143587649d43f737a51d0773b65",
+    "tools/package_playtest.py": "b133dc05e02b7ff8c895df23f1dd7e0536982e7c322c48690d890f2baaeb2a24",
+    "tools/verify_playtest.py": "b10c4aa8f80719c8985471a73accb38b6bdacf33781d07a287c4d035259b70e9"
+  }
+}

@@ -34,3 +34,14 @@ No independent reviewer or Owner acceptance yet.
 - Validation boundary: memory/evidence/s4-ci/failed-push-linux/dm-native-governance.json; memory/evidence/s4-ci/review.json. Initial native CI FAILED; repaired YAML and embedded Python syntax checked locally. Hosted latest repaired-head acceptance PENDING.
 - Next action: Push repaired S4 candidate and verify its latest-head Windows/Linux native and memory CI.
 - PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:2a4fe333f0c3593dde235f4b5313e23c1b64710d430fc1ef328f65422138cde4 -->
+### Canonical memory checkpoint — 2026-10-14-dm01-i1
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `2a4fe333f0c3593dde235f4b5313e23c1b64710d430fc1ef328f65422138cde4`
+- Commit binding: `0dcd0b8a9466512ec290a516c8b39a5cd175566f` (bound)
+- Record: Owner confirmed exact DM01-I1 DONE: integrate existing DM01 onto main a1068a8 native acceptance and CI and deliver reviewable Draft PR. Isolated branch codex/dm01-main-integration preserves19 game/config/test source bytes from PR3 head92f4f418. Committed integration0dcd0b8; framework2a09d542, lock, contract and governance-drift workflow unchanged. Checker/validator accept only known unique DM00/DM01 main-scene profiles with exact sequence, both DM01 test sentinels and fresh HEAD/hash/exit checks; negative rejection preserved. Failure harness exercises real bad script/scene/missing engine and healthyDM01/DM00. Existing Windows development package helpers added to native matrix. L2 trace storage follows selected evidence directory; no framework policy edit. PLAN/README/spec reconcile historical S3/S4 integration. Author-process review found no bounded Draft blocker; independent review not claimed. Owner skipped remaining R1 GUI; no GUI operated here. Source workspaces unchanged; no merge/release or DM02.
+- Validation boundary: memory/evidence/dm01-i1/REPORT.md and review.json; runtime.json post-commit head0dcd0b8 pre/post/native pass with default pin, interface11 and real engine16+24 assertions. native-cases-precommit.json5 matched including preservedDM00; game-preservation.json19 unchanged; workflow-syntax.json both YAML/Python steps pass; hooks.json managed hooks installed; memory-preflight.json authority guard no blockers. Hosted latest-head CI PENDING at this checkpoint; GUI/input/fun/qualification NOT CLAIMED.
+- Next action: Commit canonical memory companion, push both commits, create a Draft PR against main and verify Windows/Linux native and governance checks at its exact latest head. Do not merge or start another slice.
+- PLAN reconciliation: `updated`

@@ -1,0 +1,7 @@
+{
+  "ok": true,
+  "workflows": [
+    ".github\\workflows\\dm-00.yml",
+    ".github\\workflows\\governance-drift.yml"
+  ]
+}
