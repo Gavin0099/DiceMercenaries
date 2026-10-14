@@ -1,0 +1,40 @@
+{
+  "mode": "VALIDATION",
+  "mode_source": "validation_command",
+  "task": "S4 CI candidate delivery",
+  "task_authority": "user_request",
+  "scope": [
+    ".github/workflows/dm-00.yml",
+    ".github/workflows/governance-drift.yml",
+    "PLAN.md",
+    "canonical memory companion"
+  ],
+  "done": [
+    "Implementation committed at 6cfd76d96187728ed60519fc67db0047cd3166fd",
+    "Local workflow syntax, drift and memory checks passed"
+  ],
+  "claim_ceiling": [
+    "Local workflow candidate; hosted acceptance pending final head"
+  ],
+  "not_claimed": [
+    "branch protection or bypass prevention",
+    "independent technical approval",
+    "platform memory lifecycle",
+    "formal memory evidence qualification",
+    "gameplay",
+    "full adoption",
+    "consumer merge"
+  ],
+  "evidence_refs": [
+    "memory/evidence/s4-ci/review.json",
+    "memory/evidence/s4-ci/drift.json",
+    "memory/evidence/s4-ci/memory-authority.json",
+    "memory/evidence/s4-ci/memory-range.json"
+  ],
+  "risk": [
+    "Historical unbound/provenance memory warnings remain report-only",
+    "Hosted Linux/Windows behavior pending",
+    "Other dirty checkouts excluded"
+  ],
+  "next_action": "Deliver Draft and verify hosted final-head checks"
+}
