@@ -1,8 +1,9 @@
-"""Adapt the existing DM-00 checker to the framework's DomainValidator seam."""
+"""Bind fresh DM-00/DM-01 evidence to the framework DomainValidator seam."""
 from __future__ import annotations
 
 import hashlib
 import json
+import re
 from pathlib import Path
 import subprocess
 import sys
@@ -15,6 +16,23 @@ SOURCE_FILES = (
     'project.godot', 'scenes/ui/bootstrap.tscn',
     'tests/integration/test_bootstrap.gd', 'tools/check_project.py',
 )
+
+
+def profile(root: Path) -> tuple[str, tuple[str, ...], list[tuple[str, str]]]:
+    scenes = re.findall(r'^run/main_scene="([^"]+)"\s*$',
+                        (root / 'project.godot').read_text(encoding='utf-8'), re.MULTILINE)
+    if scenes == ['res://scenes/ui/bootstrap.tscn']:
+        return 'DM-00', SOURCE_FILES, [
+            ('res://tests/integration/test_bootstrap.gd', 'DM00_BOOTSTRAP_PASS')]
+    if scenes == ['res://scenes/battle/physics_lab.tscn']:
+        sources = ('project.godot', 'tools/check_project.py',
+                   *[p.relative_to(root).as_posix() for p in sorted((root / 'scripts').rglob('*.gd'))],
+                   *[p.relative_to(root).as_posix() for p in sorted((root / 'scenes').rglob('*.tscn'))],
+                   'tests/unit/test_shot_rules.gd', 'tests/integration/test_physics_lab.gd')
+        return 'DM-01', sources, [
+            ('res://tests/unit/test_shot_rules.gd', 'DM01_RULES_PASS'),
+            ('res://tests/integration/test_physics_lab.gd', 'DM01_PHYSICS_PASS')]
+    raise ValueError('Exactly one supported main scene is required')
 
 
 class NativeProjectValidator(DomainValidator):
@@ -33,8 +51,9 @@ class NativeProjectValidator(DomainValidator):
             godot = checks.get('godot_path')
             if not isinstance(godot, str) or not godot.strip():
                 raise ValueError('Native acceptance requires an explicit godot_path')
+            slice_name, source_files, scripts = profile(self.root)
             hashes = {name: hashlib.sha256((self.root / name).read_bytes()).hexdigest()
-                      for name in SOURCE_FILES}
+                      for name in source_files}
             head = subprocess.check_output(
                 ['git', 'rev-parse', 'HEAD'], cwd=self.root, text=True).strip()
             with tempfile.TemporaryDirectory(prefix='dm-native-check-') as directory:
@@ -51,8 +70,8 @@ class NativeProjectValidator(DomainValidator):
             metadata['native_evidence'] = evidence
             if result.returncode != 0 or evidence.get('ok') is not True:
                 raise ValueError(evidence.get('error') or 'Native Godot check failed')
-            if evidence.get('slice') != 'DM-00' or evidence.get('source_commit') != head:
-                raise ValueError('Native evidence is not bound to this DM-00 HEAD')
+            if evidence.get('slice') != slice_name or evidence.get('source_commit') != head:
+                raise ValueError('Native evidence is not bound to this slice and HEAD')
             recorded_hashes = evidence.get('source_files_sha256')
             if not isinstance(recorded_hashes, dict):
                 raise ValueError('Native source hashes are missing')
@@ -61,14 +80,14 @@ class NativeProjectValidator(DomainValidator):
             if len(normalized_hashes) != len(recorded_hashes) or normalized_hashes != hashes:
                 raise ValueError('Native evidence does not match current source bytes')
             current_hashes = {name: hashlib.sha256((self.root / name).read_bytes()).hexdigest()
-                              for name in SOURCE_FILES}
+                              for name in source_files}
             if current_hashes != hashes:
                 raise ValueError('Native source changed during acceptance')
             expected = [
                 [godot, '--version'],
                 [godot, '--path', str(self.root), '--headless', '--editor', '--import'],
-                [godot, '--path', str(self.root), '--headless', '--script',
-                 'res://tests/integration/test_bootstrap.gd'],
+                *[[godot, '--path', str(self.root), '--headless', '--script', script]
+                  for script, _ in scripts],
                 [godot, '--path', str(self.root), '--headless', '--quit-after', '3'],
             ]
             native_checks = evidence.get('checks')
@@ -82,11 +101,12 @@ class NativeProjectValidator(DomainValidator):
                     raise ValueError('Native acceptance sequence contains a failed check')
             if not native_checks[0]['output'].strip().startswith('4.7.2.stable.'):
                 raise ValueError('Official Godot 4.7.2 stable required')
-            if 'DM00_BOOTSTRAP_PASS' not in native_checks[2]['output']:
-                raise ValueError('Bootstrap success sentinel missing')
+            for index, (_, sentinel) in enumerate(scripts, 2):
+                if sentinel not in native_checks[index]['output']:
+                    raise ValueError('Native test success sentinel missing')
             return ValidatorResult(True, self.rule_ids,
-                                   evidence_summary='Fresh DM-00 native import/test/startup passed',
+                                   evidence_summary=f'Fresh {slice_name} native import/test/startup passed',
                                    metadata=metadata)
         except (OSError, subprocess.SubprocessError, ValueError, TypeError, AttributeError) as exc:
             return ValidatorResult(False, self.rule_ids, violations=[str(exc)],
-                                   evidence_summary='DM-00 native acceptance failed', metadata=metadata)
+                                   evidence_summary='Native acceptance failed', metadata=metadata)

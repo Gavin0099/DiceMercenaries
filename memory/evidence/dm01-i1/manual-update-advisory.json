@@ -1,0 +1,18 @@
+{
+  "report_version": "0.1",
+  "report_only": true,
+  "advisory_active": false,
+  "signal": "lock_vs_checkout_mismatch",
+  "repo_root": "C:\\Users\\reiko\\.codex\\worktrees\\gdscript-support\\dm01-i1",
+  "touched_update_paths": [],
+  "lock_consistency": null,
+  "update_receipt_status": null,
+  "reasons": [
+    "no staged governance framework checkout or framework lock paths were touched"
+  ],
+  "cannot_claim": [
+    "no manual update risk was evaluated for unrelated changes",
+    "absence of advisory is not proof of governed update compliance"
+  ],
+  "recommended_action": "If this is a manual update, report manual_update and do not claim completed/latest/full adoption. To complete a governed update, run the updater/F-7 path and relay the human_readable_adoption_summary table."
+}

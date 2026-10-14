@@ -1,4 +1,4 @@
-"""Run existing pre/post-task checks with a freshly executed DM-00 validator."""
+"""Run existing pre/post-task checks with fresh native slice acceptance."""
 from __future__ import annotations
 
 import argparse
@@ -33,6 +33,11 @@ def main() -> int:
         from governance_tools.contract_validator import VALID_LANG
         from runtime_hooks.core.pre_task_check import run_pre_task_check
         from runtime_hooks.core.post_task_check import run_post_task_check
+        from governance_tools import output_tier
+        # The consumer owns the evidence destination; do not scatter L2 traces
+        # in the worktree root. This changes storage only, not tier/gate policy.
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        output_tier.GOVERNANCE_AUDIT_DIR = args.output.resolve().parent / 'audit'
         if 'GDScript' not in VALID_LANG:
             raise ValueError('Framework does not yet support GDScript; publish/adopt the reviewed S1/S2 candidate first')
         # Record exactly which candidate bytes are being exercised locally.
@@ -43,9 +48,21 @@ def main() -> int:
         for name in ('SYSTEM_PROMPT.md', 'AGENT.md', 'TESTING.md'):
             (framework / 'governance' / name).read_text(encoding='utf-8')
         rules = 'common,gdscript,dm-native-check'
+        dm01 = 'res://scenes/battle/physics_lab.tscn' in (ROOT / 'project.godot').read_text(encoding='utf-8')
+        slice_name = 'DM-01' if dm01 else 'DM-00'
+        level = 'L2' if dm01 else 'L1'
+        loaded = 'SYSTEM_PROMPT, AGENT, TESTING'
+        if dm01:
+            (framework / 'governance/ARCHITECTURE.md').read_text(encoding='utf-8')
+            loaded += ', ARCHITECTURE'
+        changed_files = ['project.godot', 'tools/check_project.py'] + (
+            ['scenes/battle/physics_lab.tscn', 'tests/integration/test_physics_lab.gd',
+             'tests/unit/test_shot_rules.gd',
+             *[p.relative_to(ROOT).as_posix() for p in sorted((ROOT / 'scripts').rglob('*.gd'))]]
+            if dm01 else ['scenes/ui/bootstrap.tscn', 'tests/integration/test_bootstrap.gd'])
         report['pre_task'] = run_pre_task_check(ROOT, rules=rules, risk='medium',
-            oversight='review-required', memory_mode='candidate', task_level='L1',
-            contract_file=ROOT / 'contract.yaml', task_text='Verify DM-00 native acceptance')
+            oversight='review-required', memory_mode='candidate', task_level=level,
+            contract_file=ROOT / 'contract.yaml', task_text=f'Verify {slice_name} native acceptance')
         if not report['pre_task']['ok']:
             raise ValueError('Pre-task check failed; native acceptance was not run')
         test_command = [sys.executable, '-m', 'unittest', 'discover', '-s', 'tests/governance', '-v']
@@ -61,9 +78,9 @@ def main() -> int:
         memory_path = ROOT / 'memory/01_active_task.md'
         content = memory_path.read_text(encoding='utf-8') if memory_path.exists() else ''
         contract = '\n'.join([
-            '[Governance Contract]', 'LANG = GDScript, Python', 'LEVEL = L1', 'SCOPE = tooling',
-            'PLAN = PLAN.md / DM-00 native acceptance', 'LOADED = SYSTEM_PROMPT, AGENT, TESTING',
-            'CONTEXT = DM-00 -> native import/test/startup; NOT: gameplay or full adoption',
+            '[Governance Contract]', 'LANG = GDScript, Python', f'LEVEL = {level}', 'SCOPE = tooling',
+            f'PLAN = PLAN.md / {slice_name} native acceptance', f'LOADED = {loaded}',
+            f'CONTEXT = {slice_name} -> native import/test/startup; NOT: gameplay or full adoption',
             f'PRESSURE = SAFE ({len(content.splitlines())}/200 lines; {len(content)} chars)',
             f'RULES = {rules}', 'RISK = medium', 'OVERSIGHT = review-required', 'MEMORY_MODE = candidate',
         ])
@@ -71,8 +88,7 @@ def main() -> int:
             oversight='review-required', memory_mode='candidate',
             project_root=ROOT, contract_file=ROOT / 'contract.yaml',
             checks={'godot_path': args.godot, 'test_names': test_names,
-                    'changed_files': ['project.godot', 'scenes/ui/bootstrap.tscn',
-                                      'tests/integration/test_bootstrap.gd', 'tools/check_project.py']})
+                    'changed_files': changed_files})
         validators = report['post_task'].get('domain_validator_results', [])
         if (len(validators) != 1 or validators[0].get('rule_ids') != ['dm-native-check']
                 or validators[0].get('ok') is not True):

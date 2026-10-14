@@ -1,7 +1,7 @@
-name: DM-00 native checks
+name: Native slice acceptance
 on:
   push:
-    branches: [main, 'feat/dm-00', 'codex/dm-s4-native-ci']
+    branches: [main, 'feat/dm-00', 'codex/dm-s4-native-ci', 'codex/dm01-main-integration']
   pull_request:
   workflow_dispatch:
 permissions:
@@ -62,7 +62,23 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: dm00-${{ matrix.os }}-${{ github.sha }}
+          name: dm-native-${{ matrix.os }}-${{ github.sha }}
           path: |
             ${{ runner.temp }}/dm-native-governance.json
             ${{ runner.temp }}/dm-native-cases.json
+      - name: Package and verify Windows development playtest
+        if: runner.os == 'Windows'
+        shell: python
+        run: |
+          import os, pathlib, subprocess
+          engine = pathlib.Path(os.environ['DM_GODOT']).with_name('Godot_v4.7.2-stable_win64.exe')
+          output = pathlib.Path(os.environ['RUNNER_TEMP']) / 'DiceMercenaries_DM01_Windows.zip'
+          subprocess.run(['python', 'tools/package_playtest.py', '--engine', str(engine), '--output', str(output)], check=True)
+          subprocess.run(['python', 'tools/verify_playtest.py', '--zip', str(output), '--output', str(output.with_suffix('.json'))], check=True)
+      - uses: actions/upload-artifact@v4
+        if: runner.os == 'Windows' && success()
+        with:
+          name: dm01-windows-playtest-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/DiceMercenaries_DM01_Windows.zip
+            ${{ runner.temp }}/DiceMercenaries_DM01_Windows.json

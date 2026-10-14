@@ -5,18 +5,16 @@
 > **Freshness**: Sprint (7d)
 
 ## Current Phase
-Governance onboarding candidate, followed by DM-00. Owner acceptance pending.
+DM-00 skeleton engineering acceptance completed. DM-01-I1 integrates the existing physics lab candidate onto main a1068a8; Draft delivery and CI verification in progress. Governance remains partial; full play acceptance is not claimed.
 
 ## Active Sprint
-- S3 delivery: Draft PR #8 stacks on DM-00. Framework pin 2a09d542, explicit
-  native validator and pre/post-task acceptance; Windows interface tests and
-  four native failure replays passed locally. Author review found no blocking
-  finding; independent review and Owner acceptance pending.
-- S4 CI: implementation 6cfd76d9 updates only two workflows, covering all
-  PR bases with Windows/Linux native acceptance and current-diff memory checks.
-  Local workflow/drift/memory checks passed. First hosted native run exposed a
-  missing PyYAML dependency; repair ab35f46a pins PyYAML6.0.3, latest CI pending.
-  Separate stacked Draft authorized. No consumer merge.
+- DM-01-I1: preserve game bytes from PR #3 head 92f4f418; retain main framework
+  pin 2a09d542 and governance workflow; adapt native validation/failure fixtures
+  for DM-01 and preserve DM-00 acceptance. Direct automatic checks and CI only.
+  Owner explicitly skipped remaining DM-01-R1 GUI testing. No merge/release.
+- S3/S4 were integrated with GOV-00 and DM-00 into main a1068a8. The current
+  integration preserves that framework pin, native gate and memory CI. Earlier
+  delivery records remain historical evidence, not current pending work.
 - GOV-00: pinned submodule, baseline, repo instructions, installed local hooks, runtime smoke and reviewer evidence.
 - DM-00: independent Godot 4.7.2 project, empty main scene, headless test entry, Windows CI.
 - Each slice has its own branch and Draft PR. No merge, deploy or release.
@@ -34,6 +32,6 @@ DM-01 onward follow docs/GAME_PLAN.md §12 and G1/G2/G3. Do not start until prec
 - Governance completion cannot be self-declared; final authority is Owner/reviewer.
 - GDScript is available from the adopted framework checkout. The historical F-7 apply reported partial
   adoption; committing the pin alone does not prove complete adoption.
-- S3 native evidence is local. S4 hosted Windows/Linux and memory checks remain
-  a separate delivery gate; green checks do not establish branch protection.
+- Each new candidate must have its own Windows/Linux and memory CI evidence;
+  green checks do not establish branch protection or human gameplay acceptance.
 - No gameplay gate has passed.
