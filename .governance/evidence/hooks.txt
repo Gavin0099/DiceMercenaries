@@ -1,0 +1,48 @@
+AI Governance Hook Install Validation
+
+valid              = True
+repo_root          = /workspace/scratch/1ae49dba32c3/DiceMercenaries
+hook_dir           = /workspace/scratch/1ae49dba32c3/DiceMercenaries/.git/hooks
+framework_root     = /workspace/scratch/1ae49dba32c3/DiceMercenaries/.ai-governance-framework
+
+[Copilot configuration format / Copilot 配置格式]
+Copilot VS Code configuration format = GOVERNED（符合既有配置格式）
+Copilot VS Code framework binding = NOT_VERIFIED_BY_THIS_CHECK（此檢查未驗證綁定）
+Copilot VS Code runtime = NOT_EVALUATED_BY_THIS_CHECK（此檢查未評估實際執行）
+Copilot CLI/cloud configuration format = GOVERNED（符合既有配置格式）
+Copilot CLI/cloud framework binding = NOT_VERIFIED_BY_THIS_CHECK（此檢查未驗證綁定）
+Copilot CLI/cloud runtime = NOT_EVALUATED_BY_THIS_CHECK（此檢查未評估實際執行）
+配置格式符合不代表安裝完整、framework 綁定正確或 runtime 已驗證。
+總體 copilot_lifecycle_installed 保留原判斷；請分別查看兩種配置的格式狀態。
+
+[checks]
+copilot_checkpoint_body_matches_header = True
+copilot_checkpoint_matches_canonical = True
+copilot_checkpoint_projection_inside_managed_block = True
+copilot_checkpoint_projection_present = True
+copilot_checkpoint_source_expected = True
+copilot_checkpoint_version_current = True
+copilot_instructions_governed    = True
+copilot_instructions_managed_block_unique = True
+copilot_instructions_present     = True
+copilot_lifecycle_bridge_governed = True
+copilot_lifecycle_bridge_present = True
+copilot_lifecycle_installed      = True
+copilot_session_end_hooks_governed = True
+copilot_session_end_hooks_present = True
+copilot_vscode_hooks_governed    = True
+copilot_vscode_hooks_present     = True
+external_tree_identity_config_has_repository_root = True
+external_tree_identity_config_present = True
+external_tree_identity_config_valid = True
+framework_file:contract.yaml     = True
+framework_file:governance_tools/contract_validator.py = True
+framework_file:governance_tools/plan_freshness.py = True
+framework_file:scripts/lib/python.sh = True
+framework_file:scripts/run-runtime-governance.sh = True
+framework_root_config_present    = True
+framework_root_exists            = True
+git_hooks_dir_present            = True
+pre_commit_installed             = True
+pre_push_installed               = True
+self_smoke_dependency_declared   = True

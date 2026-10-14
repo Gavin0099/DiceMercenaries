@@ -1,0 +1,79 @@
+External Repo Readiness
+
+ready              = True
+repo_root          = /workspace/scratch/1ae49dba32c3/DiceMercenaries
+project_facts      = status=available | artifact_exists=False | artifact_drift=False | source=02_workflow.md
+
+[checks]
+contract_files_complete  = True
+contract_resolved        = True
+framework_release_compatible = True
+framework_source_canonical = True
+framework_version_current = True
+framework_version_known  = True
+git_repo_present         = True
+gitlab_adapter_scope_consistent = True
+governance_baseline_present = True
+governance_drift_clean   = True
+hooks_ready              = True
+plan_fresh_enough        = True
+plan_present             = True
+project_facts_drift_free = True
+project_facts_intakeable = True
+project_facts_present    = True
+project_facts_schema_complete = True
+
+[governance_drift]  ← authoritative governance compliance check
+severity           = ok
+baseline_version   = 1.0.0
+
+[contract]
+source             = discovery
+path               = /workspace/scratch/1ae49dba32c3/DiceMercenaries/contract.yaml
+name               = DiceMercenaries-contract
+domain             = offline-single-player-game
+plugin_version     = 1.0.0
+documents          = 5
+rule_roots         = 1
+validators         = 0
+
+[framework_version]
+state              = current
+current_release    = 1.3.0
+adopted_release    = 1.3.0
+adopted_commit     = b74bbde22727391dadfdc017cb1bad9c20169ad6
+framework_repo     = https://github.com/Gavin0099/ai-governance-framework.git
+canonical_repo     = https://github.com/Gavin0099/ai-governance-framework.git
+interface_version  = 1
+compatible_range   = >=1.0.0,<2.0.0
+lock_file          = /workspace/scratch/1ae49dba32c3/DiceMercenaries/governance/framework.lock.json
+
+[plan]
+status             = FRESH
+days_since_update  = 0
+threshold_days     = 7
+
+[hooks]
+valid              = True
+framework_root     = /workspace/scratch/1ae49dba32c3/DiceMercenaries/.ai-governance-framework
+
+[project_facts]
+status             = available
+available          = True
+source_file        = /workspace/scratch/1ae49dba32c3/DiceMercenaries/memory/02_workflow.md
+source_filename    = 02_workflow.md
+schema_status      = complete
+missing_logical    = []
+sync_direction     = external_to_framework
+artifact_path      = /workspace/scratch/1ae49dba32c3/DiceMercenaries/.ai-governance-framework/artifacts/external-project-facts/DiceMercenaries.json
+artifact_exists    = False
+artifact_drift     = False
+reason             = None
+remediation_hint   = None
+
+[agents_calibration]
+status             = repo_specific_minimal
+reason             = repo_local_paths_commands_or_boundaries_detected
+path               = /workspace/scratch/1ae49dba32c3/DiceMercenaries/AGENTS.md
+reviewer_signal    = None
+repo_specific_signals = ['path_or_file:- Before claiming completion for any change touching `memory/**`, run `python -m governance_tools.memory_workflow --check --repo .`.', 'command:- For memory completion claims, run `python -m governance_tools.memory_workflow --check --repo . --run-guard` and report blockers before claiming DONE.', 'path_or_file:- Canonical writer signal: `governance_tools.memory_record` / `memory_record.py`.', 'path_or_file:L0: wording and comments. L1: Godot skeleton, CI and presentation adapters. L2: D20/core combat rules, save integrity, migration, release or governance authority changes. Contract classification is a proposal pending Owner review.', 'path_or_file:scripts/domain: independent invariant and boundary tests. scripts/combat: scene/physics integration. scripts/progression: preserve guild state and reset run state. project.godot and CI: pinned-engine import and headless scene startup; Windows results required for DM-00 acceptance.', 'path_or_file:Escalate before core rule/save behavior changes, cross-layer behavior changes or any merge/release. Failed gameplay Gate blocks later content slices. GDScript language routing is unresolved: do not label it as Python or JS.']

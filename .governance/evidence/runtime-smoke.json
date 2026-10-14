@@ -1,0 +1,42 @@
+{
+  "result_schema": "external_repo_smoke_result.v0.2",
+  "generated_at": "2026-10-13T09:47:25Z",
+  "ok": true,
+  "repo_root": "/workspace/scratch/1ae49dba32c3/DiceMercenaries",
+  "plan_path": "/workspace/scratch/1ae49dba32c3/DiceMercenaries/PLAN.md",
+  "contract_path": "/workspace/scratch/1ae49dba32c3/DiceMercenaries/contract.yaml",
+  "framework_root": "/workspace/scratch/1ae49dba32c3/DiceMercenaries/.ai-governance-framework",
+  "framework_commit": "b74bbde22727391dadfdc017cb1bad9c20169ad6",
+  "framework_worktree_clean": true,
+  "framework_worktree_changes": [],
+  "rules": [
+    "common",
+    "avalonia",
+    "cpp",
+    "csharp",
+    "gl-hub-vendor-cmd",
+    "kernel-driver",
+    "python",
+    "refactor",
+    "swift"
+  ],
+  "pre_task_ok": true,
+  "session_start_ok": true,
+  "post_task_ok": null,
+  "post_task_cases": [],
+  "token_summary": {
+    "prompt_tokens": null,
+    "completion_tokens": null,
+    "total_tokens": null,
+    "token_source_summary": "unknown",
+    "token_observability_level": "none",
+    "provenance_warning": "not_provided_by_smoke",
+    "decision_usage_allowed": false,
+    "analysis_safe_for_decision": false
+  },
+  "warnings": [
+    "Assumption check missing before modification planning: missing=assumptions, alternative_root_causes, evidence, reframe_or_validation_step; why=the premise, alternatives, evidence, or validation step is not visible yet; next=state the missing items before choosing an implementation",
+    "Decision policy advisory: assumption evidence missing: missing=direct evidence that tests the stated assumption; why=the decision remains uncertain even if the assumption is plausible; next=collect a trace, spec, test, or usage evidence before a high-impact change"
+  ],
+  "errors": []
+}
