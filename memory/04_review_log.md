@@ -23,3 +23,14 @@ No independent reviewer or Owner acceptance yet.
 - Validation boundary: memory/evidence/s4-ci/review.json; drift.json; memory-authority.json; memory-range.json. Workflow YAML and embedded Python parse passed; drift and both memory commands exited0. Hosted latest-head CI PENDING; no formal memory qualification.
 - Next action: Commit S4 memory companion, push/create stacked Draft, and verify latest-head hosted Windows/Linux native and memory CI.
 - PLAN reconciliation: `updated`
+
+<!-- memory_record_projection:review-log:d9927fbd4d16a73bfb912fa22c7b327f306c0f5751fe80418457d1c6dfc781cf -->
+### Canonical memory checkpoint — 2026-10-14-dm-s4-ci-dependency-repair
+
+- Writer: `governance_tools.memory_record`
+- Record identity: `d9927fbd4d16a73bfb912fa22c7b327f306c0f5751fe80418457d1c6dfc781cf`
+- Commit binding: `ab35f46a728af8669ebc907580b37dee728f3bb0` (bound)
+- Record: S4 hosted native jobs failed before engine acceptance on both Windows/Linux at head3034528. Downloaded Linux run38518475296 receipt reports No module named yaml. Framework requirements.txt requires pyyaml>=6.0. Committed native workflow installation of PyYAML==6.0.3 at ab35f46a728af8669ebc907580b37dee728f3bb0. Author review confirmed no acceptance weakening. Governance PR run38518501174 passed. This is a dependency repair to the existing authorized S4 workflow scope; no schema/runtime/contract change.
+- Validation boundary: memory/evidence/s4-ci/failed-push-linux/dm-native-governance.json; memory/evidence/s4-ci/review.json. Initial native CI FAILED; repaired YAML and embedded Python syntax checked locally. Hosted latest repaired-head acceptance PENDING.
+- Next action: Push repaired S4 candidate and verify its latest-head Windows/Linux native and memory CI.
+- PLAN reconciliation: `updated`

@@ -32,5 +32,18 @@
     "gameplay",
     "full adoption",
     "consumer merge"
-  ]
+  ],
+  "latest_implementation_head": "ab35f46a728af8669ebc907580b37dee728f3bb0",
+  "observed_failure": {
+    "head": "30345284f7d89c77d5f29f1688344ebc3328fdac",
+    "push_run": 38518475296,
+    "pr_run": 38518501173,
+    "platforms": [
+      "ubuntu-latest",
+      "windows-latest"
+    ],
+    "cause": "No module named 'yaml'",
+    "evidence": "memory/evidence/s4-ci/failed-push-linux/dm-native-governance.json"
+  },
+  "repair": "Native workflow installs PyYAML==6.0.3, compatible with framework requirements.txt pyyaml>=6.0; validator verdict and enforcement unchanged"
 }

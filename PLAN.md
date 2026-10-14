@@ -14,7 +14,8 @@ Governance onboarding candidate, followed by DM-00. Owner acceptance pending.
   finding; independent review and Owner acceptance pending.
 - S4 CI: implementation 6cfd76d9 updates only two workflows, covering all
   PR bases with Windows/Linux native acceptance and current-diff memory checks.
-  Local workflow/drift/memory checks passed; hosted latest-head checks pending.
+  Local workflow/drift/memory checks passed. First hosted native run exposed a
+  missing PyYAML dependency; repair ab35f46a pins PyYAML6.0.3, latest CI pending.
   Separate stacked Draft authorized. No consumer merge.
 - GOV-00: pinned submodule, baseline, repo instructions, installed local hooks, runtime smoke and reviewer evidence.
 - DM-00: independent Godot 4.7.2 project, empty main scene, headless test entry, Windows CI.
